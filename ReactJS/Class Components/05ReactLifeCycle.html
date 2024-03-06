@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React lifecycle </title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            
+            <h2>React Lifecycle</h2>
+
+            <h3>Lifecycle of Components</h3>
+            <p>Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.</p>
+            <p>The three phases are: <strong>Mounting,</strong> <strong>Updating,</strong> and <strong>Unmounting.</strong></p>
+
+            <h3>Mounting</h3>
+            <p>Mounting means putting elements into the DOM.</p>
+
+            <p>React has four built-in methods that gets called, in this order, when mounting a component:</p>
+
+            <ol>
+                <li>constructor()</li>
+                <li>getDerivedStateFromProps()</li>
+                <li>render()</li>
+                <li>componentDidMount()</li>
+            </ol>
+
+            <p>The <b>render()</b> method is required and will always be called, the others are optional and will be called if you define them.</p>
+
+            <h3>constructor</h3>
+            <p>The <b>constructor()</b> method is called before anything else, when the component is initiated, and it is the natural place to set up the initial <b>state</b> and other initial values.</p>
+
+            <p>The <b>constructor()</b> method is called with the <b>props,</b> as arguments, and you should always start by calling the <b>super(props)</b> before anything else, this will initiate the parent's constructor method and allows the component to inherit methods from its parent <b>(React.Component).</b></p>
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>The constructor method is called, by React, every time you make a component:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component {  <br>
+                            constructor(props) {  <br>
+                              super(props);  <br>
+                              this.state = {favoritecolor: "red"};  <br>
+                            }  <br>
+                            render() {  <br>
+                              return (  <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt;  <br>
+                              );  <br>
+                            }  <br>
+                          }  <br>
+                            <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root'));
+                    </div>
+                </div>
+            </div>
+
+            <h3>getDerivedStateFromProps</h3>
+            <p>The <b>getDerivedStateFromProps()</b> method is called right before rendering the element(s) in the DOM.</p>
+            <p>This is the natural place to set the <b>state</b> object based on the initial <b>props</b>.</p>
+            <p>It takes <b>state</b> as an argument, and returns an object with changes to the <b>state</b>.</p>
+            <p>The example below starts with the favorite color being "red", but the <b>getDerivedStateFromProps()</b> method updates the favorite color based on the <b>favcol</b> attribute:</p>
+            
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>The getDerivedStateFromProps method is called right before the render method:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            static getDerivedStateFromProps(props, state) { <br>
+                              return {favoritecolor: props.favcol }; <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header favcol="yellow"/&gt;, document.getElementById('root'));  
+                    </div>
+                </div>
+            </div>
+            
+            <h3>render</h3>
+            <p>The <b>render()</b> method is required, and is the method that actually outputs the HTML to the DOM.</p>
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>A simple component with a simple <b>render()</b> method:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;h1&gt;This is the content of the Header component&lt;/h1&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>componentDidMount</h3>
+            <p>The <b>componentDidMount()</b> method is called after the component is rendered.</p>
+            <p>This is where you run statements that requires that the component is already placed in the DOM.</p>
+
+            
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>At first my favorite color is red, but give me a second, and it is yellow instead:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            componentDidMount() { <br>
+                              setTimeout(() => { <br>
+                                this.setState({favoritecolor: "yellow"}) <br>
+                              }, 1000) <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root'));
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Updating</h3>
+            <p>The next phase in the lifecycle is when a component is updated.</p>
+            <p>A component is updated whenever there is a change in the component's <b>state</b> or <b>props</b>.</p>
+            <p>React has five built-in methods that gets called, in this order, when a component is updated:</p>
+
+            <ol>
+                <li>getDerivedStateFromProps()</li>
+                <li>shouldComponentUpdate()</li>
+                <li>render()</li>
+                <li>getSnapshotBeforeUpdate()</li>
+                <li>componentDidUpdate()</li>
+            </ol>
+            <p>The <b>render()</b> method is required and will always be called, the others are optional and will be called if you define them.</p>
+
+            <h3>getDerivedStateFromProps</h3>
+            <p>Also at updates the <b>getDerivedStateFromProps</b> method is called. This is the first method that is called when a component gets updated.</p>
+            <p>This is still the natural place to set the <b>state</b> object based on the initial props.</p>
+            <p>The example below has a button that changes the favorite color to blue, but since the <b>getDerivedStateFromProps()</b> method is called, which updates the state with the color from the favcol attribute, the favorite color is still rendered as yellow:
+            </p>
+            
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>If the component gets updated, the <b>getDerivedStateFromProps()</b> method is called:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            static getDerivedStateFromProps(props, state) { <br>
+                              return {favoritecolor: props.favcol }; <br>
+                            } <br>
+                            changeColor = () => { <br>
+                              this.setState({favoritecolor: "blue"}); <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                &lt;button type="button" onClick={this.changeColor}&gt;Change color&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header favcol="yellow"/&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>shouldComponentUpdate</h3>
+            <p>In the <b>shouldComponentUpdate()</b> method you can return a Boolean value that specifies whether React should continue with the rendering or not.
+            </p>
+            <p>The default value is true.
+            </p>
+            <p>The example below shows what happens when the <b>shouldComponentUpdate()</b> method returns false:</p>
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Stop the component from rendering at any update:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            shouldComponentUpdate() { <br>
+                              return false; <br>
+                            } <br>
+                            changeColor = () => { <br>
+                              this.setState({favoritecolor: "blue"}); <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                &lt;button type="button" onClick={this.changeColor}&gt;Change color&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Same example as above, but this time the shouldComponentUpdate() method returns true instead:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            shouldComponentUpdate() { <br>
+                              return true; <br>
+                            } <br>
+                            changeColor = () => { <br>
+                              this.setState({favoritecolor: "blue"}); <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                &lt;button type="button" onClick={this.changeColor}&gt;Change color&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
+
+            <h3>render</h3>
+            <p>The render() method is of course called when a component gets updated, it has to re-render the HTML to the DOM, with the new changes.
+            </p>
+            <p>The example below has a button that changes the favorite color to blue:
+            </p>
+
+            
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Click the button to make a change in the component's state:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            changeColor = () => { <br>
+                              this.setState({favoritecolor: "blue"}); <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                &lt;button type="button" onClick={this.changeColor}&gt;Change color&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+
+
+            <h3>getSnapshotBeforeUpdate</h3>
+            <p>In the <b>getSnapshotBeforeUpdate()</b> method you have access to the <b>props</b> and <b>state</b> before the update, meaning that even after the update, you can check what the values were before the update.
+            </p>
+            <p>If the <b>getSnapshotBeforeUpdate()</b> method is present, you should also include the <b>componentDidUpdate()</b> method, otherwise you will get an error.
+            </p>
+            <p>The example below might seem complicated, but all it does is this:
+            </p>
+            <p>When the component is mounting it is rendered with the favorite color "red".
+            </p>
+            <p>When the component has been mounted, a timer changes the state, and after one second, the favorite color becomes "yellow".
+            </p>
+            <p>This action triggers the update phase, and since this component has a <b>getSnapshotBeforeUpdate()</b> method, this method is executed, and writes a message to the empty DIV1 element.</p>
+            <p>Then the <b>componentDidUpdate()</b> method is executed and writes a message in the empty DIV2 element:
+            </p>
+ 
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use the <b>getSnapshotBeforeUpdate()</b> method to find out what the state object looked like before the update:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            componentDidMount() { <br>
+                              setTimeout(() => { <br>
+                                this.setState({favoritecolor: "yellow"}) <br>
+                              }, 1000) <br>
+                            } <br>
+                            getSnapshotBeforeUpdate(prevProps, prevState) { <br>
+                              document.getElementById("div1").innerHTML = <br>
+                              "Before the update, the favorite was " + prevState.favoritecolor; <br>
+                            } <br>
+                            componentDidUpdate() { <br>
+                              document.getElementById("div2").innerHTML = <br>
+                              "The updated favorite is " + this.state.favoritecolor; <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                  &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                  &lt;div id="div1"&gt;&lt;/div&gt; <br>
+                                  &lt;div id="div2"&gt;&lt;/div&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+
+
+            <h3>componentDidUpdate</h3>
+            <p>The <b>componentDidUpdate</b> method is called after the component is updated in the DOM.
+            </p>
+            <p>The example below might seem complicated, but all it does is this:
+            </p>
+            <p>When the component is mounting it is rendered with the favorite color "red".
+            </p>
+            <p>When the component has been mounted, a timer changes the state, and the color becomes "yellow".
+            </p>
+            <p>This action triggers the update phase, and since this component has a <b>componentDidUpdate</b> method, this method is executed and writes a message in the empty DIV element:
+            </p>
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>The <b>componentDidUpdate</b> method is called after the update has been rendered in the DOM:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Header extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {favoritecolor: "red"}; <br>
+                            } <br>
+                            componentDidMount() { <br>
+                              setTimeout(() => { <br>
+                                this.setState({favoritecolor: "yellow"}) <br>
+                              }, 1000) <br>
+                            } <br>
+                            componentDidUpdate() { <br>
+                              document.getElementById("mydiv").innerHTML = <br>
+                              "The updated favorite is " + this.state.favoritecolor; <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                &lt;h1&gt;My Favorite Color is {this.state.favoritecolor}&lt;/h1&gt; <br>
+                                &lt;div id="mydiv"&gt;&lt;/div&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Header /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Unmounting</h3>
+            <p>The next phase in the lifecycle is when a component is removed from the DOM, or unmounting as React likes to call it.
+            </p>
+            <p>React has only one built-in method that gets called when a component is unmounted:
+            </p>
+
+            <ul>
+                <li>componentWillUnmount()</li>
+            </ul>            
+
+            <h3>componentWillUnmount</h3>
+            <p>The componentWillUnmount method is called when the component is about to be removed from the DOM.
+            </p>
+
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Click the button to delete the header:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                    </div>
+                    <div class="Example-code-syntex">
+                        class Container extends React.Component { <br>
+                            constructor(props) { <br>
+                              super(props); <br>
+                              this.state = {show: true}; <br>
+                            } <br>
+                            delHeader = () => { <br>
+                              this.setState({show: false}); <br>
+                            } <br>
+                            render() { <br>
+                              let myheader; <br>
+                              if (this.state.show) { <br>
+                                myheader = &lt;Child /&gt;; <br>
+                              }; <br>
+                              return ( <br>
+                                &lt;div&gt; <br>
+                                {myheader} <br>
+                                &lt;button type="button" onClick={this.delHeader}&gt;Delete Header&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          class Child extends React.Component { <br>
+                            componentWillUnmount() { <br>
+                              alert("The component named Header is about to be unmounted."); <br>
+                            } <br>
+                            render() { <br>
+                              return ( <br>
+                                &lt;h1&gt;Hello World!&lt;/h1&gt; <br>
+                              ); <br>
+                            } <br>
+                          } <br>
+                           <br>
+                          ReactDOM.render(&lt;Container /&gt;, document.getElementById('root')); <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

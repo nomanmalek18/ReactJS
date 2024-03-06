@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Declarative & Imperative</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Declarative & Imperative</h2>
+            <h3>Declarative</h3>
+            <p>Declarative programming focuses on <b>describing the desired outcome</b> or result, <b>without specifying the details steps</b> or instructions to achieve it.</p>
+
+            <p>In a Declarative programming style, you <b>define what you want</b> the program ti accomplish, and the underlying framework or system takes care od figuringnout how to achieve it.</p>
+
+            <p>In React the UI Typically built using a Declarative approach you define the <b>desired UI state</b> based on the current application state and React efficiently updates the UI to reflect those changes.</p>
+
+            <p>you declare the structure and behavior of your components using JSX and <b>react manages </b> the rendering and upadates for you.</p>
+
+            <p>by using a Declarative programming style in react  you <b>can focus more on describing the inrended behavior of the UI,</b> and the framework handles the underlying optimizations and upadtes.</p>
+
+            <p>This makes it easier to reason about the application, understand the flow of data and maintain the codebase. </p>
+
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Declarative | Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function NumberList ({numbers}){ <br>
+                            return( <br>
+                                &lt;ul&gt; <br>
+                                    {numbers.map((number) =&gt;( <br>
+                                        &lt;li key={number}&gt;{number}&lt;/li&gt; <br>
+                                    ))} <br>
+                                &lt;/ul&gt; <br>
+                            ); <br>
+                        } <br>
+                         <br>
+                        const numbers = [1,2,3,4,5]; <br>
+                        ReactDOM.render( <br>
+                            &lt;NumberList number ={numbers} /&gt; <br>
+                            ,document.getElementById("root") <br>
+                        ); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Imperative</h3>
+            <p>Imperative programming on the other hand involves <b>explicitly specifying each step</b> or instruction to achieve a practicular outcome.</p>
+
+            <p>In Imperative programming you provide <b>details instruction on</b> how to preform a taks step by step</p>
+
+            <p>traditionally Imperative programming has been more common in Imperative languages like <b>C</b> or <b>Javascript</b> without any framework or libraries.</p>
+
+            <p>in React Imperative programming <b>can be used in</b> certain scenarios such as interaction with third-party libraries or accessing low-level APIs. However, it is generally not the recommended approach for building the UI itself.</p>
+
+            <p>The <b>Declarative programming</b> style or React allows you to define reusable UI components and Declaratively specify their behavior based on the application state.</p>
+
+    
+                        <!-- Example -->
+            <div class="Example">
+                <h3>Declarative | Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        
+                    </div>
+                    <div class="Example-code-syntex">
+                        const numbers = [1,2,3,4,5]; <br>
+                        const List = document.createElement("ul"); <br>
+                        <br>
+                        numbers.forEach((number) =>{ <br>
+                            const ListItem = document.createElement("li"); <br>
+                            ListItem.textContent = number; <br>
+                            List.appendChild(ListItem);  <br>
+                        }); <br>
+                        <br>
+                        document.getElementById("root").appendChild(List); <br>
+                    </div>
+                </div>
+            </div>
+
+            <p>in this Imperative approach using vanilla Javascript we <b>manually create</b> the <b> &lt;ul&gt; element</b> and iterate over the numbers array using <b>forEach.</b></p>
+        </div>
+    </div>
+</body>
+
+</html>

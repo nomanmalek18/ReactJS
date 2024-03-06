@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Components in ReactJS</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Components in ReactJS</h2>
+            <p>React Component are <b>reuseable</b> building blocks in the React JS library.</p>
+            <p>They encapsulate a <b>piece of UI</b> and its assocoated <b>logic,</b> allowing you to compose complex user interfaces from <b>smaller, self-contained parts</b></p>
+            <p>The Components can be divided into two types:</p>
+        
+            <ul>
+                <li><b>Function</b> Components</li>
+                <li><b>Class</b> Components</li>
+            </ul>
+
+            <h3>Functional Components</h3>
+            <p>Functional Components are defined as javasctipt functions. They receive input data as properties <b>(Props)</b> and return React elements.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Syntex</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react';<br>
+                        <br>
+                        function Mycomponent(props){ <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return &lt;div&gt;hello, {props.name}!&lt;/div&gt; <br>
+                        } <br>
+                        <br>
+                        export default Mycomponent;
+                    </div>
+                </div>
+            </div>
+            
+            <ul>
+                <li>React Stateless Function Component</li>
+                <li>React Function Component: State</li>
+                <li>React Function Component: Event Handler </li>
+                <li>React Function Component: Callback Function</li>
+                <li>React Function Component: Lifecycle</li>
+            </ul>
+
+            <h3>Class Components</h3>
+            <p>class component are defined as javascript <b>classes</b> that extend the React.component base class.</p>
+            <p>They have a more <b>advanced features,</b> such as local component state and lifecycle methods.</p>
+            <p>this is <b>no longer</b> necessary to learn as a React developer, but it can still benefit you to learn it</p>
+            
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Syntex</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        <br>
+                        class MyComponent extends React.Component { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;constructor(props){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(props); <br>
+                                this.state = { <br>
+                                    count : 0 <br>
+                                }; <br>
+                            } <br>
+                            handleClick(){ <br>
+                                this.setState({ count : this.state.count + 1}); <br>
+                            } <br>
+                            render(){ <br>
+                                return( <br>
+                                    &lt;div&gt; <br>
+                                        &lt;p&gt;Count :{this.state.count}&lt;/p&gt; <br>
+                                        &lt;button onclick="{()=&gt; this.handleClick()}"&gt;Increment&lt;/button&gt; <br>
+                                    &lt;/div&gt; <br>
+                                ); <br>
+                            } <br>
+                        } <br>
+                        <br>
+                        export default MyComponent;
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Using Components</h3>
+            <p>components can be used and reused in other components or the main application. They can be composed together to create complex UI hierarchies.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Syntex</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react';<br>
+                        <br>
+                        function App(props){ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return &lt;div&gt;<br>
+                            &lt;h1&gt;Welcome to My App&lt;/h1&gt; <br>
+                            &lt;MyComponent name ="ReactJS"/&gt; <br>
+                        &lt;/div&gt; <br>
+                        } <br>
+                        <br>
+                        export default App;
+                    </div>
+                </div>
+            </div>
+                 
+
+        </div>
+    </div>
+</body>
+
+</html>

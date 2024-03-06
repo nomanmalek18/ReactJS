@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React Forms</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React Forms</h2>
+            <p>React forms are used to <b>capture user input</b> and <b>handle</b> form submissions in React applications.
+            </p>
+            <p>React provides a <b>convenient way</b> to manage <b>form state</b> and <b>handle form</b> events using its component-based architecture.
+            </p>
+            
+            <h3>There are <b>two primary aspects</b>,</h3>
+
+            <ul>
+                <li>Form State Management</li>
+                <li>Handling Form Events</li>
+            </ul>
+
+            <h3>Form State Management</h3>
+
+            <p>React allows you to create <b>state</b> variables to hold the current values of <b>form inputs</b>.</p>
+
+            <p>You <b>can use hooks</b> like <b>usestate</b> or state management libraries like <b>Redux</b> to manage the form state.</p>
+
+            <p>By <b>updating the state</b> variables when the form inputs change, you keep track of the user's input.</p>
+
+            <h3>Handling Form Events</h3>
+
+            <p>React provides <b>event handlers</b> that allow you to respond to user Interactions with the form.</p>
+            <p>The most common event handler is <b>onChange</b>, which fires whenever the value of an input field changes.</p>
+            <p>By capturing and updating the form state with <b>each onChange event</b>, you can keep the form data up to date.</p>
+
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>Binding in Constructor</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, {useState} from "react";
+
+                        function MyForn() {
+                            const [name, setName] useState("");
+                            const [email, setEmail] useState("");
+                        
+                            const handleSubmit (e) => {
+                                e.preventDefault();
+                                console.log("Name:", name); 
+                                console.log("Email:", email);
+                            };
+
+                            return (
+                                &lt;form onSubmit={handleSubmit}&gt;
+                                    &lt;label&gt;
+                                        Name:
+                                        &lt;input
+                                            type="text"
+                                            value={name}
+                                            onChange={(e) =&gt; setName(e.target.value)}
+                                        /&gt;
+                                    &lt;/label&gt;
+                                    &lt;br /&gt;
+                                    &lt;label&gt;
+                                        Email:
+                                        &lt;input
+                                            type="email" valve (email)
+                                            onChange={(e) =&gt; setEmail(e.target.value)}
+                                        /&gt;
+                                    &lt;/label&gt;
+                        
+                                    &lt;br /&gt;
+                        
+                                    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                                &lt;/form&gt;
+                        
+                            );
+                        }
+                        
+                        export default MyForn;                    
+                    </div>
+                </div>
+            </div>
+
+    
+            <h3>In the example</h3>
+
+            <p>we have a form with two input fields: <b>name</b> and <b>email</b>.</p>
+
+            <p>We use the <b>useState hook</b> to create state variables for these fields. Initially, both variables are set to empty strings.</p>
+
+            <p>The <b>onChange</b> event handlers on the input fields update the state variables (<b>name</b> and <b>email</b> ) whenever the user types or modifies the input.</p>
+
+            <h3>React Forms libraries</h3>
+            <p><b>libraries</b> like <b>Formik</b> and React Hook form offer additional Functionality to <b>simplify form Handling.</b></p>
+            <p>Ovarall, <b>React forms enable</b> the creation of intrective and dynamic user interfaces.</p>
+        </div>
+    </div>
+</body>
+
+</html>

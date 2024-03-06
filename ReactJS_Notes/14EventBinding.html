@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Event Binding</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Event Binding</h2>
+
+            <h3>What is Event Binding?</h3>
+            <p>In React, event binding refers to the <b>process of attaching</b> event listeners to <b>DOM</b> elements or <b>React components</b> ti handle user interaction or other events.</p>
+            <p>When an event accurs, such as a <b>button click</b> or a <b>form submission,</b> the event handler function associated with the event is executed.</p>
+            <p>react provides a <b>Declarative approach to event binding,</b> allowing you to define event binling handlers directly in your component code.</p>
+
+            <h3>Binding in Constructor</h3>
+            <p>you can bind event handliers in the javascript <b>bind method.</b> This wnsures that the event handler has the conrrect context(i.e <b>this</b> )when it's called. </p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Binding in Constructor</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        class MyComponent extends React.Component{ <br>
+                            constructor(prors){ <br>
+                                super(prors); <br>
+                                this.handleClick = this.handleClick.bind(this); <br>
+                            } <br>
+ <br>
+                            handleClick(){ <br>
+                                // Event handler logic  <br>
+                            } <br>
+ <br>
+                            render(){ <br>
+                                return  &lt;button onclick={this.handleClick}&gt; <br>
+                                            Click Me <br>
+                                        &lt;/button&gt;; <br>
+                            } <br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <h3>Array Function In Class Property</h3>
+            <p>You can aslo use an arrow function in the class property to <b>automatically bind the event handler to the component's instance.</b></p>
+
+            <p>Arrow function inharit the <b>lexical this</b> context, so you <b>don't need explicitly</b> bind the event handler.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Array Function In Class Property</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        class MyComponent extends React.Component{ <br>
+                            handleClick() =>{ <br>
+                                // Event handler logic  <br>
+                            }; <br>
+                            <br>
+                            render(){ <br>
+                                return  &lt;button onclick={this.handleClick}&gt; <br>
+                                            Click Me <br>
+                                        &lt;/button&gt;; <br>
+                            } <br>
+                        }   
+                    </div>
+                </div>
+            </div>
+
+            <h3>Binding Inline With Arrow Function</h3>
+            <p>you can <b>directly bind event handlers inline using arrow functions.</b></p>
+            <p>this approach creates a new function instance on each render so it might have a <b>slight performance import</b> if used excessively.</p>
+        
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Binding Inline With Arrow Function</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        class MyComponent extends React.Component{ <br>
+                            handleClick() =>{ <br>
+                                // Event handler logic  <br>
+                            }; <br>
+                            <br>
+                            render(){ <br>
+                                return  &lt;button onclick={() => this.handleClick()}&gt; <br>
+                                            Click Me <br>
+                                        &lt;/button&gt;; <br>
+                            } <br>
+                        }   
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Binding in Function Components</h3>
+            <p>In function components you can use the <b>useCallback hool</b> to <b>memoize</b> the event handler and ensure it doesn't change between renders.</p>
+            
+            <p>This <b>can import performance</b> by avoiding <b>unnecessary re-redners</b> caused by new handler references.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Binding in Function Components</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, {useCallback} from 'react' <br>
+ <br>
+                        const MyComponent = () =>{ <br>
+                            const handleClick = useCallback.(() =>{ <br>
+                                // Event handler login <br>
+                            } ,[]); <br>
+                            return &lt;button onclick={handleClick}&gt; <br>
+                                    Click me <br>
+                                    &lt;/button&gt;; <br>
+                        };
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>

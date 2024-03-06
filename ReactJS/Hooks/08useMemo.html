@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useMemo Hook</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useMemo Hooks</h2>
+            <p>The React <b>useMemo</b> Hook returns a memoized value.</p>
+            <p>Think of memoization as caching a value so that it does not need to be recalculated.</p>
+            <p>The <b>useMemo</b> Hook only runs when one of its dependencies update.</p>
+            <p>This can improve performance.</p>
+
+            <h3>Performance</h3>
+            <p>The <b>useMemo</b> Hook can be used to keep expensive, resource intensive functions from needlessly running.</p>
+            <p>In this example, we have an expensive function that runs on every render.</p>
+            <p>When changing the count or adding a todo, you will notice a delay in execution.</p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>A poor performing function. The expensiveCalculation function runs on every render:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                        32
+                        33
+                        34
+                        35
+                        36
+                        37
+                        38
+                        39
+                        40
+                        41
+                        42
+                        43
+                        44
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                         <br>
+                        const App = () => { <br>
+                          const [count, setCount] = useState(0); <br>
+                          const [todos, setTodos] = useState([]); <br>
+                          const calculation = expensiveCalculation(count); <br>
+                         <br>
+                          const increment = () => { <br>
+                            setCount((c) => c + 1); <br>
+                          }; <br>
+                          const addTodo = () => { <br>
+                            setTodos((t) => [...t, "New Todo"]); <br>
+                          }; <br>
+                         <br>
+                          return ( <br>
+                            &lt;div&gt; <br>
+                              &lt;div&gt; <br>
+                                &lt;h2&gt;My Todos&lt;/h2&gt; <br>
+                                {todos.map((todo, index) =&gt; { <br>
+                                  return &lt;p key={index}&gt;{todo}&lt;/p&gt;; <br>
+                                })} <br>
+                                &lt;button onClick={addTodo}&gt;Add Todo&lt;/button&gt; <br>
+                              &lt;/div&gt; <br>
+                              &lt;hr /&gt; <br>
+                              &lt;div&gt; <br>
+                                Count: {count} <br>
+                                &lt;button onClick={increment}&gt;+&lt;/button&gt; <br>
+                                &lt;h2&gt;Expensive Calculation&lt;/h2&gt; <br>
+                                {calculation} <br>
+                              &lt;/div&gt; <br>
+                            &lt;/div&gt; <br>
+                          ); <br>
+                        }; <br>
+                         <br>
+                        const expensiveCalculation = (num) =&gt; { <br>
+                          console.log("Calculating..."); <br>
+                          for (let i = 0; i &lt; 1000000000; i++) { <br>
+                            num += 1; <br>
+                          } <br>
+                          return num; <br>
+                        }; <br>
+                        
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;); <br>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Use <b>useMemo</b></h3>
+            <p>To fix this performance issue, we can use the <b>useMemo</b> Hook to memoize the expensiveCalculation function. This will cause the function to only run when needed.</p>
+            <p>We can wrap the expensive function call with <b>useMemo</b>.</p>
+            <p>The <b>useMemo</b> Hook accepts a second parameter to declare dependencies. The expensive function will only run when its dependencies have changed.</p>
+            <p>In the following example, the expensive function will only run when <b>count</b> is changed and not when todo's are added.</p>
+
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Performance example using the useMemo Hook:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                        32
+                        33
+                        34
+                        35
+                        36
+                        37
+                        38
+                        39
+                        40
+                        41
+                        42
+                        43
+                        44
+                        45
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState, useMemo } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        const App = () => { <br>
+                          const [count, setCount] = useState(0); <br>
+                          const [todos, setTodos] = useState([]); <br>
+                          const calculation = useMemo(() => expensiveCalculation(count), [count]); <br>
+                         <br>
+                          const increment = () => { <br>
+                            setCount((c) => c + 1); <br>
+                          }; <br>
+                          const addTodo = () => { <br>
+                            setTodos((t) => [...t, "New Todo"]); <br>
+                          }; <br>
+                       <br>
+                          return ( <br>
+                            &lt;div&gt; <br>
+                              &lt;div&gt; <br>
+                                &lt;h2&gt;My Todos&lt;/h2&gt; <br>
+                                {todos.map((todo, index) =&gt; { <br>
+                                  return &lt;p key={index}&gt;{todo}&lt;/p&gt;; <br>
+                                })} <br>
+                                &lt;button onClick={addTodo}&gt;Add Todo&lt;/button&gt; <br>
+                              &lt;/div&gt; <br>
+                              &lt;hr /&gt; <br>
+                              &lt;div&gt; <br>
+                                Count: {count} <br>
+                                &lt;button onClick={increment}&gt;+&lt;/button&gt; <br>
+                                &lt;h2&gt;Expensive Calculation&lt;/h2&gt; <br>
+                                {calculation} <br>
+                              &lt;/div&gt; <br>
+                            &lt;/div&gt; <br>
+                          ); <br>
+                        }; <br>
+                        <br>
+                        const expensiveCalculation = (num) =&gt; { <br>
+                          console.log("Calculating..."); <br>
+                          for (let i = 0; i &lt; 1000000000; i++) { <br>
+                            num += 1; <br>
+                          } <br>
+                          return num; <br>
+                        }; <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;);
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useCallback Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useCallback Hooks</h2>
+            <p>The React <b>useCallback</b> Hook returns a memoized callback function.</p>
+            <p>This allows us to isolate resource intensive functions so that they will not automatically run on every
+                render.
+            </p>
+            <p>The <b>useCallback</b> Hook only runs when one of its dependencies update.</p>
+            <p>This can improve performance.</p>
+            <p>The <b>useCallback</b> and <b>useMemo</b> Hooks are similar. The main difference is that <b>useMemo</b>
+                returns a memoized value and <b>useCallback</b> returns a memoized function. You can learn more about
+                useMemo in the useMemo cha</p>
+
+            <h3>Problem</h3>
+            <p>One reason to use <b>useCallback</b> is to prevent a component from re-rendering unless its props have
+                changed.
+            </p>
+            <p>In this example, you might think that the <b>Todos</b> component will not re-render unless the
+                <b>todos</b> change:
+            </p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>index.js</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        import Todos from "./Todos"; <br>
+                        <br>
+                        const App = () => { <br>
+                        const [count, setCount] = useState(0); <br>
+                        const [todos, setTodos] = useState([]); <br>
+                        <br>
+                        const increment = () => { <br>
+                        setCount((c) => c + 1); <br>
+                        }; <br>
+                        const addTodo = () => { <br>
+                        setTodos((t) => [...t, "New Todo"]); <br>
+                        }; <br>
+                        <br>
+                        return ( <br>
+                        &lt;&gt; <br>
+                            &lt;Todos todos={todos} addTodo={addTodo} /&gt; <br>
+                            &lt;hr /&gt; <br>
+                            &lt;div&gt; <br>
+                                Count: {count} <br>
+                                &lt;button onClick={increment}&gt;+&lt;/button&gt; <br>
+                            &lt;/div&gt; <br>
+                        &lt;/&gt; <br>
+                        ); <br>
+                        }; <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;);
+                    </div>
+                </div>
+                <p>Todos.js</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { memo } from "react"; <br>
+                        <br>
+                        const Todos = ({ todos, addTodo }) => { <br>
+                          console.log("child render"); <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h2&gt;My Todos&lt;/h2&gt; <br>
+                              {todos.map((todo, index) =&gt; { <br>
+                                return &lt;p key={index}&gt;{todo}&lt;/p&gt;; <br>
+                              })} <br>
+                              &lt;button onClick={addTodo}&gt;Add Todo&lt;/button&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        }; <br>
+                        <br>
+                        export default memo(Todos);
+                    </div>
+                </div>
+            </div>
+
+            <p>Try running this and click the count increment button.</p>
+            <p>You will notice that the <b>Todos</b> component re-renders even when the <b>todos</b> do not change.</p>
+            <p>Why does this not work? We are using <b>memo</b>, so the <b>Todos</b> component should not re-render since neither the <b>todos</b> state nor the <b>addTodo</b> function are changing when the count is incremented.</p>
+            <p>This is because of something called "referential equality".</p>
+            <p>Every time a component re-renders, its functions get recreated. Because of this, the <b>addTodo</b> function has actually changed.</p>
+
+            <h3>Solution</h3>
+            <p>To fix this, we can use the <b>useCallback</b> hook to prevent the function from being recreated unless necessary.</p>
+            <p>Use the <b>useCallback</b> Hook to prevent the <b>Todos</b> component from re-rendering needlessly:</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>index.js</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState, useCallback } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        import Todos from "./Todos"; <br>
+                                             <br>
+                        const App = () => { <br>
+                          const [count, setCount] = useState(0); <br>
+                          const [todos, setTodos] = useState([]); <br>
+                         <br>
+                          const increment = () => { <br>
+                            setCount((c) => c + 1); <br>
+                          }; <br>
+                          const addTodo = useCallback(() => { <br>
+                            setTodos((t) => [...t, "New Todo"]); <br>
+                          }, [todos]); <br>
+                         <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;Todos todos={todos} addTodo={addTodo} /&gt; <br>
+                              &lt;hr /&gt; <br>
+                              &lt;div&gt; <br>
+                                Count: {count} <br>
+                                &lt;button onClick={increment}&gt;+&lt;/button&gt; <br>
+                              &lt;/div&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        }; <br>
+                         <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;);
+                    </div>
+                </div>
+                <p>Todos.js</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { memo } from "react"; <br>
+ <br>
+                        const Todos = ({ todos, addTodo }) => { <br>
+                          console.log("child render"); <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h2&gt;My Todos&lt;/h2&gt; <br>
+                              {todos.map((todo, index) =&gt; { <br>
+                                return &lt;p key={index}&gt;{todo}&lt;/p&gt;; <br>
+                              })} <br>
+                              &lt;button onClick={addTodo}&gt;Add Todo&lt;/button&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        }; <br>
+                         <br>
+                        export default memo(Todos); <br>
+                    </div>
+                </div>
+            </div>
+            
+
+
+Now the Todos component will only re-render when the todos prop changes.
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>JSX in ReactJS</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>JSX in ReactJS</h2>
+            <h3>What is JSX</h3>
+            <p>JSX (javasctipt XML) in an extension to javascript syntex that allow you to write <b>HTML-like code within your javascript </b>code when working with React.</p>
+            <p>it provides a <b>conscise and expressive</b> way to describe the structure and appearance of your user interface.</p>
+
+             <!-- Example -->
+             <div class="Example">
+                <h3>JSX Example:</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react';<br>
+                        <br>
+                        const App = ()=> { <br>
+                            return ( <br>
+                                &lt;div&gt; <br>
+                                    &lt;h1&gt;Hello, JSX&lt;/h1&gt; <br>
+                                    &lt;p&gt;This is a React Component.&lt;/p&gt; <br>
+                                &lt;/div&gt; <br>
+                            ); <br>
+                        }; <br>
+                        export default App;
+                    </div>
+                </div>
+            </div>
+           
+            <p>In this example: The code inside the <b>return</b> statement looks similar to HTML, but it's actually JSX.</p>
+
+            <h3>JSX | JS Expression</h3>
+            <p>JSX elements can also include javascript expression inside curly braces{}.</p>
+            <p>This allows you to embed <b>dynamic values</b> or execute javascript code within JSX.</p>
+
+             <!-- Example -->
+             <div class="Example">
+                <div class="Example-code">
+                    <div class="Example-Number">
+                    </div>
+                    <div class="Example-code-syntex">
+                        const name = "ReactJS"; <br>
+                        const greeting = &lt;h1&gt;hello, {name}!&lt;/h1&gt;;
+                    </div>
+                </div>
+            </div>
+           
+            <h3>Important Points | JSX </h3>
+            <ul>
+                <li><b>Import</b> React begin by importing the React library.</li>
+                <li>one root elements: JSX expression must have a <b>single root element.</b></li>
+                <li>HTML - Like syntex: JSX uses <b>HTML</b> - like syntex to define elements and attributes</li>
+                <li>self- closing tags: Use <b>self-closing </b>tags for elements without children.</li>
+                <li>Embed javascript expression within <b>curly braces</b>{}.</li>
+                <li>class vs className: use <b>className</b> instead of class for CSS classes.</li>
+                <li>inline styles: Apply inline styles using the style attribute with a <b>javascript object.</b></li>
+                <li><b>capitalize component</b> names to differentiate them from HTML elements.</li>
+                <li>javascript expression, not statements: use javascript expression, <b>not statements,</b> inside curly braces.</li>
+                <li>commenting: place comments <b>within curly braces.</b></li>
+                <li>Fragments; use fragments to <b>group elements</b> without adding extra nodes to the DOM.</li>
+                <li>Event handiling: Define event handiling using <b>comeicase</b> naming conventions.</li>
+                <li>conditional rendering: use javascript <b>expression</b> or <b>logical operators</b> for conditional rendering.</li>
+                <li>JSX is not HTML: Remember that JSX is <b>transpiled into javascript</b> not HTML.</li>
+                <li>keys in lists: Assing <b>Unique "key"</b> props to items in lists for efficient rendering.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

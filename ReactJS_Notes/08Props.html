@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Props in React</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Props In ReactJS</h2>
+            <h3>What Is <b>Props</b> ?</h3>
+            <p>in React props (short for <b>properties</b>)  are a way to pass data from a paernt component to its child components, <b>like function arguments </b> in jS and <b>attributes</b> in HTML.</p>
+            <p>props should be treated as <b>read-only</b> data, <b>cannot be modified.</b></p>
+
+            <h3>Defining Props</h3>
+            <p>props are <b>defined as attribute</b> on a component when it is used in JSX.</p>
+
+            <p>For example, consider a <b>parent</b> component called parent that renders a <b>child</b> component called child</p>            
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Defining Props</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                    </div>
+                    <div class="Example-code-syntex">
+                        // parent component  <br>
+                        const parent = {} => { <br>
+                            const name = "React JS"; <br>
+                            return &lt;Child name = {name} /&gt;; <br>
+                        }; <br>
+                        <br>
+                        //Child component <br>
+                        const Child = {props} =&gt;{ <br>
+                            return &lt;h1&gt; Hello, {props.name}!&lt;/h1&gt; <br>
+                        };
+                    </div>
+                 </div>
+             </div>
+
+            <h3>Passing Props</h3>
+             <p>props are passed from a <b>parent component to its child compopent</b> bt specifying them as attributes on the child component's JSX tag.</p>
+
+             <p>in the <b> previous example:</b> The <b>name</b> props in passed from the parent compopent to tha child compopent.</p>
+
+            <!-- Example -->
+            <div class="Example">
+               <h3>Passing Props</h3>
+               <div class="Example-code">
+                   <div class="Example-Number">
+                       1
+                       2
+                       3
+                       4
+                       5
+                       6
+                       7
+                       8
+                       9
+                       10
+                   </div>
+                   <div class="Example-code-syntex">
+                       // parent component  <br>
+                        const name = "React JS"; <br>
+                        &lt;Child name ={name} /&gt; <br>
+                        <br>
+                       //Child component <br>
+                        &lt;h1&&gt;Hello, {props.name}!&lt;/h1&&gt;;
+                    </div>
+                </div>
+            </div>
+
+            <h3>Receiving Props</h3>
+            <p>in the child component, props are received as a <b>single parameter.</b></p>
+            <p>The parameter can be <b>named anything,</b> but conventionally it is named props.</p>
+            <p>you can access individual props using <b>dot notation,</b> such as <b>props.name.</b></p>
+
+
+            <!-- Example -->
+            <div class="Example">
+               <h3>Receiving Props</h3>
+               <div class="Example-code">
+                   <div class="Example-Number">
+                       1
+                       2
+                    </div>
+                   <div class="Example-code-syntex">
+                       //Child component <br>
+                        &lt;h1&&gt;Hello, {props.name}!&lt;/h1&&gt;;
+                    </div>
+                </div>
+            </div>
+             
+            <h3>Dynamic Props</h3>
+            <p>props can be dynamic, meaning their values can change based on the <b>component's state</b> or <b>other factors.</b></p>
+
+            <p>when a prop's value changes, react will <b>automatically re-render</b> the component and update the rendered output based on the new pros values.</p>
+
+            <h3>Default Props</h3>
+            <p>Default props provide a <b>fallback value</b> and helps ensure that the component behaves as expected even ot certain props are not explicitly passed</p>
+
+            <p>in <b>funcational</b> components, <b>default props</b> can be defined using the <u><b>defaultprops</b></u> property outside the component function.</p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+               <h3>Default Props</h3>
+               <div class="Example-code">
+                   <div class="Example-Number">
+                       1
+                       2
+                       3
+                       4
+                       5
+                       6
+                       7
+                       8
+                       9
+                       10
+                       11
+                       12
+                    </div>
+                   <div class="Example-code-syntex">
+                    const Mycomponent = (props)=>{  <br>
+                        return ( <br>
+                            &lt;div&gt; <br>
+                                {props.greeting} , {props.name}! <br>
+                            &lt;/div&gt; <br>
+                        ); <br>
+                    }; <br>
+                    <br>
+                    Mycomponent.defaultprops = { <br>
+                        greeting: "Hello", <br>
+                        name: "Guest" <br>
+                    };
+                    </div>
+                </div>
+            </div>
+              
+            <h3>Children Props</h3>
+            <p>in react, the children prop in a special prop that allow you to pass <b>content</b> or <b>components</b> betweem the opening and closing tags of a component.</p>
+
+            <p>it provides a way to nest and compose components, <b>enabling more flexible</b> and dynamic component structures</p>
+
+            <ul>
+                <li>Passing content as children</li>
+                <li>Passing components as children</li>
+            </ul>
+
+            <!-- Example -->
+            <div class="Example">
+              <h3>Default Props</h3>
+              <div class="Example-code">
+                  <div class="Example-Number">
+                      1
+                      2
+                      3
+                      4
+                      5
+                      6
+                      7
+                      8
+                      9
+                      10
+                      11
+                      12
+                      13
+                      14
+                      15
+                      16
+                      17
+                      18
+                      19
+                      20
+                      21
+                      22
+                      23
+                      24
+                   </div>
+                  <div class="Example-code-syntex">
+                    // 01. passing content as children:
+                   const Mycomponent = (props)=>{  <br>
+                       return ( <br>
+                           &lt;div&gt; <br>
+                           &lt;h1&gt;{props.title}&lt;/h1&gt;
+                            {props.children} <br>
+                           &lt;/div&gt; <br>
+                       ); <br>
+                   }; <br>
+                   <br>
+                   const App = () => { <br>
+                    return ( <br>
+                        &lt;Mycomponent title="parent component"&gt; <br>
+                            &lt;p&gt;this is the content passed as children&lt;/p&gt; <br>
+                        &lt;/Mycomponent&gt; <br>
+                    );  <br>
+                   }; <br>
+                    <br>
+                   // 02. passing components as children: <br>
+                   const App = () =&gt; { <br>
+                    return ( <br>
+                        &lt;button&gt; <br>
+                            &lt;span&gt;chlick me!&lt;/span&gt;{" "} <br>
+                        &lt;/button&gt; <br>
+                    );  <br>
+                   };
+                </div>
+               </div>
+            </div>
+             
+
+        </div>
+    </div>
+</body>
+
+</html>

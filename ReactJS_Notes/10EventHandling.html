@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Event Hadling In ReactJS</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Event Handling In ReactJS</h2>
+            <p>In React event handling is a fundamental aspect building <b>interactive (UI)</b> interaces.</p>
+
+            <p>provides a simple & consistent way to <b>handle events</b> within components.</p>
+            <p>just like <b>HTML DOM events,</b> React can perform actions based on user events</p>
+            <p>React events are written in </p>
+            <p><b>camelcase</b> syntax:</p>
+            <p><b>onclick</b> instead on <b>onclick.</b></p>
+
+            <h3>Attaching Event handlers</h3>
+            <p>In JSX, you attach event handling by <b>passing s function</b> as a <b>prop</b> to the corresponding event of an element or component. for example of an element, to handle a button click event</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Attaching Event handlers</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function Mycomponent (){<br>
+                            const handleclick = ()=>{ <br>
+                                console.log("button clicked!"); <br>
+                            }; <br>
+ <br>
+                            return &lt;button onclick={handleclick}&gt; <br>
+                                        Click Me <br>
+                                    &lt;/button&gt; <br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <h3>Event Object & Parameters</h3>
+            <p>React <b>passed an event object</b> as the first argument to event handlier fucntions.</p>
+            <p>This object provides information about the event, such as the <b>target element and other event-specific properties.</b></p>
+            <p>you can access this object within your event handler fucntion to <b>perform actions</b> or gather additional data.</p>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>Attaching Event handlers</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function Mycomponent (){<br>
+                            const handleInputChange = (event)=>{ <br>
+                                console.log(event.target.value); <br>
+                            }; <br>
+                            <br>
+                            return ( <br>
+                                &lt;input  <br>
+                                    type="text" <br>
+                                    onchange={handleInputChange} <br>
+                                /&gt; <br>
+                            ); <br>
+                        }
+                    </div>
+                </div>
+            </div>
+            
+            <h3><u>In this example.</u></h3>
+            <p>The <b>handleInputChange</b> function is called when the <b>input's value changes.</b></p>
+            <p>It uses <b>event.target.value</b> to access the <b>current value</b> of the input field and logs it to the console.</p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

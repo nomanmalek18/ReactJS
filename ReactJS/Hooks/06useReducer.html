@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useReducer Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useReducer Hooks</h2>
+            <p>The <b>useReducer</b> Hook is similar to the <b>useState</b> Hook.</p>
+            <p>It allows for custom state logic.</p>
+            <p>If you find yourself keeping track of multiple pieces of state that rely on complex logic, <b>useReducer</b> may be useful.</p>
+
+            <h3>Syntax</h3>
+            <p>The useReducer Hook accepts two arguments.</p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Syntax:</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                    </div>
+                    <div class="Example-code-syntex">
+                        useReducer(&lt;reducer&gt;, &lt;initialState&gt;)
+                    </div>
+                </div>
+            </div>
+                        
+            <p>The <b>reducer</b> function contains your custom state logic and the <b>initialStatecan</b> be a simple value but generally will contain an object.</p>
+            <p>The <b>useReducer</b> Hook returns the current <b>state</b> and a <b>dispatch</b> method.</p>
+            <p>Here is an example of <b>useReducer</b> in a counter app:</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useReducer } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        const initialTodos = [ <br>
+                          { <br>
+                            id: 1, <br>
+                            title: "Todo 1", <br>
+                            complete: false, <br>
+                          }, <br>
+                          { <br>
+                            id: 2, <br>
+                            title: "Todo 2", <br>
+                            complete: false, <br>
+                          }, <br>
+                        ]; <br>
+                       <br>
+                        const reducer = (state, action) => { <br>
+                          switch (action.type) { <br>
+                            case "COMPLETE": <br>
+                              return state.map((todo) => { <br>
+                                if (todo.id === action.id) { <br>
+                                  return { ...todo, complete: !todo.complete }; <br>
+                                } else { <br>
+                                  return todo; <br>
+                                } <br>
+                              }); <br>
+                            default: <br>
+                              return state; <br>
+                          } <br>
+                        }; <br>
+                        <br>
+                        function Todos() { <br>
+                          const [todos, dispatch] = useReducer(reducer, initialTodos); <br>
+                         <br>
+                          const handleComplete = (todo) => { <br>
+                            dispatch({ type: "COMPLETE", id: todo.id }); <br>
+                          }; <br>
+                       <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              {todos.map((todo) =&gt; ( <br>
+                                &lt;div key={todo.id}&gt; <br>
+                                  &lt;label&gt; <br>
+                                    &lt;input <br>
+                                      type="checkbox" <br>
+                                      checked={todo.complete} <br>
+                                      onChange={() =&gt; handleComplete(todo)} <br>
+                                    /&gt; <br>
+                                    {todo.title} <br>
+                                  &lt;/label&gt; <br>
+                                &lt;/div&gt; <br>
+                              ))} <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;Todos /&gt;);
+                    </div>
+                </div>
+            </div>
+
+            <p>This is just the logic to keep track of the todo complete status.</p>
+            <p>All of the logic to add, delete, and complete a todo could be contained within a single <b>useReducer</b> Hook by adding more actions.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

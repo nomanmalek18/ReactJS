@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this page title  -->
+    <title>constructor Class Components</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Constructor Class Components</h2>
+            <p>A constructor is a method that is called automatically when we created an object from that class. It can
+                manage initial initialization tasks such as defaulting certain object properties or sanity testing the
+                arguments passed in. Simply placed, the constructor is a method that helps in the creation of objects.
+            </p>
+
+            <p>The constructor is no different in React. This can connect event handlers to the component and/or
+                initialize the component’s local state. Before the component is mounted, the constructor() function is
+                shot, and, like most things in React, it has a few rules that you can follow when using them.</p>
+
+            <ul>
+                <li><b>Step 1:</b> Call super(props) before using this.props</li>
+            </ul>
+            <p>Due to the nature of the constructor, <b>this.props</b> object is not accessible straight out of the
+                gate, which can lead to errors. An error will be thrown by this constructor:</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                    </div>
+                    <div class="Example-code-syntex">
+                        constructor() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(this.props); <br>
+                        &nbsp;&nbsp;}
+                    </div>
+                </div>
+            </div>
+
+            <p> we transfer the value of a prop to the super() function from the constructor():</p>
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                    </div>
+                    <div class="Example-code-syntex">
+                        constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(this.props); <br>
+                        &nbsp;&nbsp;}
+                    </div>
+                </div>
+            </div>
+            <p>When you call the super() function, the parent class constructor is called, which is in the case of a
+                React is React.Component. </p>
+
+            <ul>
+                <li><b>Step 2:</b> Never call setState() inside constructor()</li>
+            </ul>
+
+            <p>The constructor of your component is the ideal place to set the component’s initial state. You must set
+                the initial state directly, rather than using setState() as you can in other methods in your class:</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                    </div>
+                    <div class="Example-code-syntex">
+                        constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+                        <br><br>
+                        this.state = { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name 'kapil', <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;age: 22, <br>
+                        &nbsp;&nbsp;&nbsp;}; <br>
+                        }
+                    </div>
+                </div>
+            </div>
+            <p>The only place you can assign the local state directly like that is the constructor. You should depend on
+                setState() somewhere else inside our component instead.</p>
+
+            <ul>
+                <li><b>Step 3:</b> Avoid assigning values from this.props to this.state</li>
+            </ul>
+            <p>You should try to avoid setting values from the properties when setting the initial component state in
+                the constructor. We can do the following:</p>
+
+
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                    </div>
+                    <div class="Example-code-syntex">
+                        constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+                        <br><br>
+                        this.state = { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name: props.name, <br>
+                        &nbsp;&nbsp;&nbsp;}; <br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <p>You wouldn’t be allowed to use setState() to change the property later. You may easily reference the
+                property directly in your code by naming this.props.name, instead of assigning the property directly to
+                the state.</p>
+
+            <ul>
+                <li><b>Step 4:</b> Bind events all in one place</li>
+            </ul>
+            <p>We can easily bind your event handlers in the constructor:</p>
+
+
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;super(props);
+                        <br><br>
+                        this.state = { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Sets that initial state<br>
+                        &nbsp;&nbsp;&nbsp;}; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Our event handlers <br>
+                        this.onClick = this.onClick.bind(this); <br>
+                        this.onKeyUp = this.onKeyUp.bind(this); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Rest Code <br>
+                        }
+                    </div>
+                </div>
+            </div>
+            <p><b>Example:</b> Now write down the following code in the App.js file. Here, App is our default component
+                where we have written our code. The following example covers constructor demonstration.</p>
+
+
+
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        0
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                        32
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { Component } from 'react'; <br>
+                        class App extends Component { <br>
+                        &nbsp;&nbsp;constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Calling super class constructor <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;super(props);<br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Creating state <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;this.state = { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;data: 'My name is User' <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;// Binding event handler <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;this.handleEvent = this.handleEvent.bind(this); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        <br>
+                        &nbsp;&nbsp;handleEvent() { <br>
+                        &nbsp;&nbsp;console.log(this.props); <br>
+                        &nbsp;&nbsp;} <br>
+                        <br>
+                        &nbsp;&nbsp;render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text"
+                        value={this.state.data} /&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;&lt;/br&gt;
+                        &lt;br&gt;&lt;/br&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button
+                        onClick={this.handleEvent}&gt;Please Click&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        export default App;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

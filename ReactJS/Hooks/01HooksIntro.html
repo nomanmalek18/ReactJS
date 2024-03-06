@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page ttile  -->
+    <title>React Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React Hooks</h2>
+            <p>Hooks were added to React in version 16.8.</p>
+            <p>Hooks allow function components to have access to state and other React features. Because of this, class components are generally no longer needed.</p>
+            <p>Although Hooks generally replace class components, there are no plans to remove classes from React.</p>
+
+            <h3>What is a Hook?</h3>
+            <p>Hooks allow us to "hook" into React features such as state and lifecycle methods.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Here is an example of a Hook. Don't worry if it doesn't make sense. We will go into more detail in the next section.</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function FavoriteColor() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [color, setColor] = useState("red"); <br>
+                         <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My favorite color is {color}!&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={() =&gt; setColor("blue")} &gt;Blue&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={() =&gt; setColor("red")} &gt;Red&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={() =&gt; setColor("pink")} &gt;Pink&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={() =&gt; setColor("green")} &gt;Green&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;); <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;FavoriteColor /&gt;);
+                    </div>
+                </div>
+            </div>
+            
+            <p>You must <b>import</b> Hooks from <b>react</b>.</p>
+
+            <p>Here we are using the <b>useState</b> Hook to keep track of the application state.</p>
+            <p>State generally refers to application data or properties that need to be tracked.</p>
+            
+            <h3>Hook Rules</h3>
+            <p>There are 3 rules for hooks:</p>
+            <ul>
+                <li>Hooks can only be called inside React function components.</li>
+                <li>Hooks can only be called at the top level of a component.</li>
+                <li>Hooks cannot be conditional</li>
+            </ul>
+            <p><b>Note:</b> Hooks will not work in React class components.</p>
+        </div>
+    </div>
+</body>
+
+</html>

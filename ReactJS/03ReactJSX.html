@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>ReactJS Installation</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React JSX</h2>
+
+            <h3>What is JSX?</h3>
+            <p>JSX stands for JavaScript XML.</p>
+            <p>JSX allows us to write HTML in React.</p>
+            <p>JSX makes it easier to write and add HTML in React.</p>
+
+            <h3>Coding JSX</h3>
+            <p>JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.</p>
+            <p>JSX converts HTML tags into react elements.</p>
+
+            <h3>Here are two examples. The first uses JSX and the second does not:</h3>
+            <p>Example 1</p>
+            <div class="Example">
+                <h3>Example</h3>
+                <p>JSX:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1 <br>
+                        2 <br>
+                        3 <br>
+                        4 <br>
+                        5 <br>
+                        6 <br>
+                        7 <br>
+                        8 <br>
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                         <br>
+                        const myElement = &lt;h1&gt;this is a syntex JSX!&lt;/h1&gt;; <br>
+                         <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(myElement); <br>
+                    </div>
+                </div>
+            </div>
+
+            <p>Example 2</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Without JSX:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1 
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                        9
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        const myElement = React.createElement('h1', {}, 'I do not use JSX!'); <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(myElement);
+                    </div>
+                </div>
+            </div>
+
+            <p>As you can see in the first example, JSX allows us to write HTML directly within the JavaScript code.</p>
+
+            <p>JSX is an extension of the JavaScript language based on ES6, and is translated into regular JavaScript at runtime.</p>
+
+            
+            <h3>Expressions in JSX</h3>
+            
+            <p>With JSX you can write expressions inside curly braces { }.</p>
+            <p>The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result:</p>
+            
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Execute the expression 5 + 5:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1 
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                        9
+
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        const myElement = &lt;h1&gt;React is {5 + 5} times better with JSX&lt;/h1&gt;; <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root'));<br>     
+                        root.render(myElement);
+            
+                    </div>
+                </div>
+            </div>
+
+            <h3>Inserting a Large Block of HTML</h3>
+            <p>To write HTML on multiple lines, put the HTML inside parentheses:</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Create a list with three list items:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        const myElement = ( <br>
+                          &lt;ul&gt; <br>
+                            &lt;li&gt;Apples&lt;/li&gt; <br>
+                            &lt;li&gt;Bananas&lt;/li&gt;<br>
+                            &lt;li&gt;Cherries&lt;/li&gt; <br>
+                          &lt;/ul&gt; <br>
+                        ); <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root'));<br>
+                        root.render(myElement);
+                    </div>
+                </div>
+            </div>
+
+            <h3>One Top Level Element</h3>
+            <p>The HTML code must be wrapped in ONE top level element.</p>
+            <p>So if you like to write two paragraphs, you must put them inside a parent element, like a div element.</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Wrap two paragraphs inside one DIV element:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                        9
+                        10
+                        11
+                        12
+                        13
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-do/client'; <br>
+                         <br>
+                        const myElement = ( <br>
+                          &lt;div&gt; <br>
+                            &lt;h1&gt;I am a Header.&lt;/h1&gt; <br>
+                            &lt;h1&gt;I am a Header too.&lt;/h1&gt; <br>
+                          &lt;/div&gt; <br>
+                        ); <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(myElement); <br>
+                    </div>
+                </div>
+            </div>
+    
+            <p>Alternatively, you can use a "fragment" to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.</p>
+            <p>A fragment looks like an empty HTML tag: &lt;&gt; &lt;/&gt;.</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Wrap two paragraphs inside a fragment:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                        9
+                        10
+                        11
+                        12
+                        13
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        const myElement = ( <br>
+                            &lt;&gt; <br>
+                              &lt;p&gt;I am a paragraph.&lt;/p&gt; <br>
+                              &lt;p&gt;I am a paragraph too.&lt;/p&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(myElement); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Elements Must be Closed</h3>
+            <p>JSX follows XML rules, and therefore HTML elements must be properly closed.</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Close empty elements with /></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                        <br>
+                        const myElement = &lt;input type="text" /&gt;;<br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root'));<br>
+                        root.render(myElement);
+                    </div>
+                </div>
+            </div>
+
+            <h3>Attribute class = className</h3>
+            <p>The class attribute is a much used attribute in HTML, but since JSX is rendered as JavaScript, and the class keyword is a reserved word in JavaScript, you are not allowed to use it in JSX.</p>
+            <p>Use attribute className instead.</p>
+            <p>JSX solved this by using className instead. When JSX is rendered, it translates className attributes into class attributes.</p>
+
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Use attribute className instead of class in JSX:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2 
+                        3 
+                        4 
+                        5 
+                        6 
+                        7 
+                        8 
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from 'react'; <br>
+                        import ReactDOM from 'react-dom/client'; <br>
+                                 <br>
+                        const myElement = &lt;h1 className="myclass"&gt;Hello World&lt;/h1&gt;; <br>
+                                 <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(myElement);
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+
+
+</body>
+
+</html>

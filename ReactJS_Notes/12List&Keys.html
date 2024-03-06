@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React JS List & Keys</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React list & keys</h2>
+            <p>In react when rendering a <b>list</b> of elements (such as an <b>array of items</b>), it's important to assing a <b>unique "key"</b> prop to each element.</p>
+
+            <p>The key prop is a special attribute that <b>helps React efficiently update and reorder</b> the elements in the list.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Attaching Event handlers</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                        const items = ["Apple" , "bannan", "Oragne"] <br>
+                        <br>
+                        const ListItems = items.map((item)=>{ <br>
+                                            &lt;li key={item}&gt;{item}&lt;/li&gt; <br>
+                        }); <br>
+                        return &lt;ul&gt;{ListItems}&lt;/ul&gt;;
+                    </div>
+                </div>
+            </div>
+
+            <p>In the exmaple above, the <b>key={item}</b> assing the value of each item in the items array as the <b>key</b> for the corresponding list element.</p>
+
+            <h3>What is a list in React?</h3>
+            <p>A list in React refers to as arrat or  <b>collection of items</b> that you want to render as components. For <b>exmaple,</b> a list of to-do items, a list of products, or a list of blog posts. </p>
+
+            <h3>Why Do We need keys</h3>
+            <p>React uses <b>keys to identify</b> individual <b>elements</b> in a list.keys help React understand the relationship between the <b>previous and current set pf items</b> in the list efficiently by identifying added, removed, or moved items accurately.</p>
+
+            <h3>What makes a keys unique?</h3>
+            <p>Each key in a list should be unique within the scope of that list. Typically,you use an identifier of a unique property from your data source as the key.</p>
+
+            <h3>How to assing keys to list element</h3>
+            <p>When renderinga list of elements in react, you need to assing a key prop to each element. you can do this by using the key attribute within the map function.</p>
+
+            <h3>why are unique keys important?</h3>
+            <p>unique keys help react <b>efficiently update the list</b> when change occur. React uses the keys to determine which elements are <b>added, removed, or reordered.</b></p>
+
+            <p><b>without unique keys,</b> React may have difficulty distinguishing between similar elements, leading to <b>unexpected behavior</b> or degraded performance.</p>
+
+        </div>
+    </div>
+</body>
+
+</html>

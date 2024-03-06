@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Conditional Rendering In ReactJS</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Conditional Rendering In ReactJS</h2>
+            <p>In React, conditional rendering is a <b>powerful technique</b> that allows you to display <b>different components or content</b> based on certain condtions.</p>
+
+            <p>React provides <b>multiple ways</b> to achieve conditional rendering, depending on the complexity and requirements od your application.</p>
+
+            <ul>
+                <li>Is-Else Statements</li>
+                <li>Ternary Operators</li>
+                <li>Logical && Operator</li>
+                <li>Conditional Render with components</li>
+            </ul>
+
+            <h3>Using <b>If-else</b> Statements</h3>
+            <p>you can use jS if-else Statements inside the <b>render()</b> method of a component to conditionally render different content.</p>
+ 
+            <!-- Example -->
+            <div class="Example">
+                <h3>If-else Statements</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function Mycomponent ({isLoggedIn}){<br>
+                            if (isLoggedIn){ <br>
+                                return <div>Welcome, user!</div>;
+                            } else{
+                                return <div>Please log in.</div>
+                            }
+                        }
+                        <br>
+                        // Welcome, user!
+                    </div>
+                </div>
+            </div>
+
+            <h3>Note</h3>
+            <p>In JSX (javascript XML) you <b>cannot</b> directly <b>use Statements</b> such as if, for pr while <b>within the curly braces</b> ( <b>{}</b>) as you would in regular javascript.</p>
+ 
+            <p>This is because JSX is a syntax extension of javascript that aims to provide a <b>declarative way of describing</b> the structures and logic of UI component.</p>
+            
+            <h3>Using Ternary Operator</h3>
+            <p>you can use the ternary operator (? :) <b>inside curly braces</b> {} to conditionally render content within JSX.</p>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Ternary Operator</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function Mycomponent ({isLoggedIn}){<br>
+                                return ( <br>
+                                    isLoggedIn ? &lt;div&gt;Welcome, user!&lt;/div&gt; <br>
+                                               : &lt;div&gt;Please log in.&lt;/div&gt;; <br>
+                                ); <br>
+                        } <br>
+                        <br>
+                        // Welcome, user!
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Using Logical && Operators</h3>
+            <p>when the condition is true, the component is rendered; otherwise, it is <b>skipped.</b></p>
+            <p>This is praticularly useful when you want to render <b>nothing or a defualt</b> state when a condition is <b>false.</b></p>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Logical && Operators</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function Mycomponent ({isLoggedIn}){<br>
+                                return ( &lt;div&gt;<br>
+                                            {isLoggedIn && &lt;div&gt;Hello!&lt;/div&gt; } <br>
+                                        &lt;/div&gt;; <br>
+                                ); <br>
+                        } <br>
+                        <br>
+                        // Hello!
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Conditional Rendering With Components</h3>
+            <p>in more complex scenarios, you may want to render different components based on conditions.  </p>
+ 
+            <!-- Example -->
+            <div class="Example">
+                <h3>Logical && Operators</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        function UseData(){ <br>
+                            return &lt;h1&gt;Welcome to the user dashboard!&lt;/h1&gt; <br>
+                        } <br>
+                        <br>
+                        function AdminData(){ <br>
+                            return &lt;h1&gt;Welcome to the Admin dashboard!&lt;/h1&gt; <br>
+                        } <br>
+                        <br>
+                        function App ({useRole}){ <br>
+                            return &lt;div&gt; <br>
+                                        {useRole === "user" ? &lt;UserData /&gt; : &lt;AdminData /&gt;}  <br>
+                                    &lt;/div&gt; <br>
+                        }
+                    </div>
+                </div>
+            </div>
+                
+            <p>These are just a few exmaples of conditional rendering in React.</p>
+            <p>Depending on your requirements, you can combine these techniques, use switch Statements, or leverage more advanced approaches such as rendering based on <b>state</b> or <b>iterating through arrays.</b></p>
+
+            <p>React's flexble nature allows for various conditional rendering approaches to suit different use cases.</p>
+
+            <p></p>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

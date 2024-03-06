@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>ReactJS Folder Structure</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>ReactJS Folder Structure</h2>
+            <p>a typical react project follows a common Folder structure that organizes the codebase.</p>
+            <img src="Assest/images/ReactFolderStructure.png" alt="" class="images">
+
+            <p><b>scr:</b> this the main Folder where most of your project's code resides.</p>
+            <ul>
+                <li><b>index.js:</b> The entry point of your application</li>
+                <li><b>App.js:</b> The root component that gets rendered in the browser.</li>
+                <li><b>components:</b> this Folder contains reuseable and smaller components used in the project</li>
+                <li><b>pages:</b> this Folder contains larger components that represent different pages or views of your application</li>
+                <li><b>styles:</b> CSS of styleing-related files, including global styles and component-specific styles.</li>
+                <li><b>assets:</b> static assets such as images, icons, or fonts used iin your application.</li>
+                <li><b>utils:</b> utility function or helper modules that are used throughout the project.</li>
+                <li><b>services:</b> this folder holds any services or API-related files.</li>
+            </ul>
+            <p><span class="yellow">public :</span> This folder contains static assets that don't require processing, such as the HTML file.</p>
+            <p><span class="yellow">node_modules :</span> it is automatically created when you install dependencies.</p>
+            <p><span class="yellow">package.json :</span> This file lists the project's metadata and dependencies, including script for running various tasks.</p>
+            <p><span class="yellow">package-lock.json (or yarn.lock) :</span> These files are automatically generated and lock the versions of your installed dependencies, ensuring consistent builds across different machines.</p>
+            <p><span class="yellow">gitignore :</span> This files specifiles which files or dierctories should be ignored by version control (e.g.,Git)</p>
+            <p><span class="yellow">README.md :</span> A files containing information about the project.</p>
+        </div>
+    </div>
+</body>
+
+</html>

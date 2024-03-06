@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useState Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useState Hook</h2>
+            <p>The React <b>useState</b> Hook allows us to track state in a function component.</p>
+            <p>State generally refers to data or properties that need to be tracking in an application.</p>
+
+            <h3>Import <b>useState</b></h3>
+            <p>To use the <b>useState</b> Hook, we first need to <b>import</b> it into our component.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>At the top of your component, <b>import</b> the <b>useState</b> Hook.</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react";
+                    </div>
+                </div>
+            </div>
+
+            <p>Notice that we are destructuring <b>useState</b> from <b>react</b> as it is a named export</p>
+
+            <h3>Initialize <b>useState</b></h3>
+            <p>We initialize our state by calling useState in our function component.</p>
+            <p><b>useState</b> accepts an initial state and returns two values:</p>
+            <ul>
+                <li>The current state.</li>
+                <li>A function that updates the state.</li>
+            </ul>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Initialize state at the top of the function component.</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        <br>
+                        function FavoriteColor() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [color, setColor] = useState(""); <br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <p>Notice that again, we are destructuring the returned values from useState.</p>
+            <p>The first value, color, is our current state.</p>
+            <p>The second value, setColor, is the function that is used to update our state</p>
+
+            <p>Lastly, we set the initial state to an empty string: <b>useState("")</b></p>
+
+            <h3>Read State</h3>
+            <p>We can now include our state anywhere in our component.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use the state variable in the rendered component.</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function FavoriteColor() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [color, setColor] = useState("red"); <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;My favorite color is {color}!&lt;/h1&gt; <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;FavoriteColor /&gt;);
+                    </div>
+                </div>
+            </div>
+
+            <h3>Update State</h3>
+            <p>To update our state, we use our state updater function.</p>
+
+            <p>We should never directly update state. <b>Ex: color = "red"</b> is not allowed.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use a button to update the state:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client";
+                        <br>
+                        function FavoriteColor() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [color, setColor] = useState("red"); <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My favorite color is {color}!&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={()=&gt; setColor("blue")}&gt;Blue&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;) <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;FavoriteColor /&gt;); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>What Can State Hold</h3>
+            <p>The <b>useState</b> Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and
+                any combination of these!</p>
+            <p>We could create multiple state Hooks to track individual values.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Create multiple state Hooks:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function Car() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [brand, setBrand] = useState("Ford"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [model, setModel] = useState("Mustang"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [year, setYear] = useState("1964"); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [color, setColor] = useState("red"); <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My {brand}&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; It is a {color} {model} from {year}. &lt;/p&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;) <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;Car /&gt;);
+                    </div>
+                </div>
+            </div>
+
+            <p>Or we can just use one state and include an object instead!</p>
+
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Create a single Hook that holds an object:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function Car() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const [car, setCar] = useState({ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand: "Ford", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model: "Mustang", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year: "1964", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: "red" <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}); <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My {car.brand}&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; It is a {car.color} {car.model} from {car.year}. &lt;/p&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render( &lt;Car /&gt;); <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Updating Objects and Arrays in State</h3>
+            <p>When state is updated, the entire state gets overwritten.</p>
+            <p>What if we only want to update the color of our car?</p>
+            <p>If we only called <b>setCar({color: "blue"})</b>, this would remove the brand, model, and year from our state.</p>
+            <p>We can use the JavaScript spread operator to help us.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use the JavaScript spread operator to update only the color of the car:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function Car() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const [car, setCar] = useState({ <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand: "Ford", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model: "Mustang", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;year: "1964", <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: "red" <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}); <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;const updateColor = () => { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setCar(previousState => { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return { ...previousState, color: "blue" } <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;My {car.brand}&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt; It is a {car.color} {car.model} from {car.year}.&lt;/p&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button" onClick={updateColor} &gt;Blue&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;) <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;Car /&gt;);
+                    </div>
+                </div>
+            </div>
+            
+            <p>Because we need the current value of state, we pass a function into our <b>setCar</b> function. This function receives the previous value.</p>
+            <p>We then return an object, spreading the <b>previousState</b> and overwriting only the color.</p>
+        </div>
+    </div>
+</body>
+
+</html>

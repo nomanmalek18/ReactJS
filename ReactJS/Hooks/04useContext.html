@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useContext Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useContext Hook</h2>
+            <h3>React Context</h3>
+            <p>React Context is a way to manage state globally.</p>
+            <p>It can be used together with the <b>useState</b> Hook to share state between deeply nested components more easily than with <b>useState</b> alone.</p>
+
+            <h3>The Problem</h3>
+            <p>State should be held by the highest parent component in the stack that requires access to the state.</p>
+            <p>To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.</p>
+            <p>To do this without Context, we will need to pass the state as "props" through each nested component. This is called "prop drilling".</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Passing "props" through nested components:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function Component1() { <br>
+                          const [user, setUser] = useState("Jesse Hall"); <br>
+                         <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h1&gt;{`Hello ${user}!`}&lt;/h1&gt; <br>
+                              &lt;Component2 user={user} /&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        function Component2({ user }) { <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h1&gt;Component 2&lt;/h1&gt; <br>
+                              &lt;Component3 user={user} /&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        function Component3({ user }) { <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h1&gt;Component 3&lt;/h1&gt; <br>
+                              &lt;Component4 user={user} /&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        function Component4({ user }) { <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h1&gt;Component 4&lt;/h1&gt; <br>
+                              &lt;Component5 user={user} /&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        function Component5({ user }) { <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;h1&gt;Component 5&lt;/h1&gt; <br>
+                              &lt;h2&gt;{`Hello ${user} again!`}&lt;/h2&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;Component1 /&gt;); <br>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Even though components 2-4 did not need the state, they had to pass the state along so that it could reach component 5.</p>
+
+            <h3>The Solution</h3>
+            <p>The solution is to create context.</p>
+
+            <h3>Create Context</h3>
+            <p>To create context, you must Import <b>createContext</b> and initialize it:</p>
+
+            <!-- Example -->
+            <div class="Example">
+              <div class="Example-code">
+                  <div class="Example-Number">
+                    1
+                    2
+                    3
+                    4
+                  </div>
+                  <div class="Example-code-syntex">
+                    import { useState, createContext } from "react"; <br>
+                    import ReactDOM from "react-dom/client"; <br>
+                     <br>
+                    const UserContext = createContext()
+                  </div>
+              </div>
+            </div>
+            
+            <p>Next we'll use the Context Provider to wrap the tree of components that need the state Context.</p>
+            
+            <h3>Context Provider</h3>
+            <p>Wrap child components in the Context Provider and supply the state value.</p>
+            
+            <!-- Example -->
+            <div class="Example">
+              <div class="Example-code">
+                  <div class="Example-Number">
+                    1
+                    2
+                    3
+                    4
+                  </div>
+                  <div class="Example-code-syntex">
+                    function Component1() { <br>
+                      const [user, setUser] = useState("Jesse Hall"); <br>
+                     <br>
+                      return ( <br>
+                        &lt;UserContext.Provider value={user}&target; <br>
+                          &lt;h1&target;{`Hello ${user}!`}&lt;/h1&target; <br>
+                          &lt;Component2 user={user} /&target; <br>
+                        &lt;/UserContext.Provider&target;
+                      );
+                    }
+                  </div>
+              </div>
+            </div>
+            
+            <p>Now, all components in this tree will have access to the user Context.</p>
+
+            <h3>Use the <b>useContext</b> Hook</h3>
+            <p>In order to use the Context in a child component, we need to access it using the <b>useContext</b> Hook.</p>
+            <p>First, include the <b>useContext</b> in the import statement:</p>
+
+            <!-- Example -->
+            <div class="Example">
+              <div class="Example-code">
+                  <div class="Example-Number">
+                    1
+                  </div>
+                  <div class="Example-code-syntex">
+                    import { useState, createContext, useContext } from "react";
+                  </div>
+              </div>
+            </div>
+            
+            <p>Then you can access the user Context in all components:</p>
+            
+            <!-- Example -->
+            <div class="Example">
+              <div class="Example-code">
+                  <div class="Example-Number">
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                    9
+                    10
+                  </div>
+                  <div class="Example-code-syntex">
+                    function Component5() { <br>
+                      const user = useContext(UserContext); <br>
+                     <br>
+                      return ( <br>
+                        &lt;&gt; <br>
+                          &lt;h1&gt;Component 5&lt;/h1&gt; <br>
+                          &lt;h2&gt;{`Hello ${user} again!`}&lt;/h2&gt; <br>
+                        &lt;/&gt; <br>
+                      ); <br>
+                    } <br>
+                  </div>
+              </div>
+            </div>
+            
+            <h3>Full Example</h3>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Here is the full example using React Context:</p>
+              <div class="Example-code">
+                  <div class="Example-Number">
+                  </div>
+                  <div class="Example-code-syntex">
+                    import { useState, createContext, useContext } from "react"; <br>
+                    import ReactDOM from "react-dom/client"; <br>
+                     <br>
+                    const UserContext = createContext(); <br>
+                     <br>
+                    function Component1() { <br>
+                      const [user, setUser] = useState("Jesse Hall"); <br>
+                     <br>
+                      return ( <br>
+                        &lt;UserContext.Provider value={user}&gt; <br>
+                          &lt;h1&gt;{`Hello ${user}!`}&lt;/h1&gt; <br>
+                          &lt;Component2 /&gt; <br>
+                        &lt;/UserContext.Provider&gt; <br>
+                      ); <br>
+                    } <br>
+                     <br>
+                    function Component2() { <br>
+                      return ( <br>
+                        &lt;&gt; <br>
+                          &lt;h1&gt;Component 2&lt;/h1&gt; <br>
+                          &lt;Component3 /&gt; <br>
+                        &lt;/&gt; <br>
+                      ); <br>
+                    } <br>
+                     <br>
+                    function Component3() { <br>
+                      return ( <br>
+                        &lt;&gt; <br>
+                          &lt;h1&gt;Component 3&lt;/h1&gt; <br>
+                          &lt;Component4 /&gt; <br>
+                        &lt;/&gt; <br>
+                      ); <br>
+                    } <br>
+                     <br>
+                    function Component4() { <br>
+                      return ( <br>
+                        &lt;&gt; <br>
+                          &lt;h1&gt;Component 4&lt;/h1&gt; <br>
+                          &lt;Component5 /&gt; <br>
+                        &lt;/&gt; <br>
+                      ); <br>
+                    } <br>
+                     <br>
+                    function Component5() { <br>
+                      const user = useContext(UserContext); <br>
+                     <br>
+                      return ( <br>
+                        &lt;&gt; <br>
+                          &lt;h1&gt;Component 5&lt;/h1&gt; <br>
+                          &lt;h2&gt;{`Hello ${user} again!`}&lt;/h2&gt; <br>
+                        &lt;/&gt; <br>
+                      ); <br>
+                    } <br>
+                     <br>
+                    const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                    root.render(&lt;Component1 /&gt;);
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Functional Component Introduction</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Functional Components</h2>
+            <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Syntex</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                    </div>
+                    <div class="Example-code-syntex">
+                        function Welcome(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;; <br>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>React Stateless Function Component</li>
+                <li>React Function Component: State</li>
+                <li>React Function Component: Event Handler </li>
+                <li>React Function Component: Callback Function</li>
+                <li>React Function Component: Lifecycle</li>
+            </ul>
+
+            <h3>A function is pure if:</h3>
+            <p>The return value is only determined by its input values</p>
+            <p>The return value is always the same for the same input values</p>
+            <p>There are two ways to do it in React functional components:</p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Using memo from react:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { memo } from 'react'; <br>
+                        const Component = (props) { <br>
+                              return ( <br>
+                              // Component code <br>
+                              ) <br>
+                        } <br>
+                        // Wrap component using "memo" HOC <br>
+                        export default memo(Component);
+                    </div>
+                </div>
+            </div>
+
+            <a target='_blank' href="https://www.knowledgehut.com/blog/web-development/react-functional-components">Reference link</a>
+        </div>
+    </div>
+</body>
+
+</html>

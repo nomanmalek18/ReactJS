@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this page title  -->
+    <title>Class Component in react js</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Class components in React</h2>
+            <p>React class components are the bread and butter of most modern web apps built in ReactJS. These components are simple classes (made up of multiple functions that add functionality to the application). All <b>class components</b> are child classes for the Component class of ReactJS.</p>
+            
+            <h3>What is Class Component in reactJs</h3>
+            <p>component will be created with class</p>
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Class component syntex</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                    </div>
+                    <div class="Example-code-syntex">
+                        class ClassComponentIntro extends Component &#123; <br />
+                        &nbsp;&nbsp;&nbsp; render() &#123; <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return () <br />
+                        &nbsp;&nbsp;&nbsp; &#125;<br />
+                        &#125;
+                    </div>
+                </div>
+            </div>
+
+            <h3>Creating class Components</h3>
+            <p>We will learn how to create class components with the help of an example</p>
+            <p><b>Example:</b> Program to demonstrate the creation of class components. Create a React app and edit the <b>App.js</b> as:</p>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <p>Filename- App.js:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        class App extends React.Component { <br>
+                        render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;GeeksForGeeks&lt;/h1&gt;; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        export default App;
+                    </div>
+                </div>
+            </div>
+
+            <p>Once a component is declared, it can be used in other components. Program to demonstrate the use of class components in other components. </p>
+
+            <p><b>Example:</b> Open the <b>App.js</b> file and replace the code with the below code.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        class Sample extends React.Component { <br>
+                        render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;A Computer Science Portal For Geeks&lt;/h1&gt;; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        class App extends React.Component { <br>
+                        render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &lt;Sample /&gt;; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        export default App; <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Advantages of class Components over Functional Components</h3>
+            <p>The main feature of <b>class components</b> that distinguished them from functional components is that they have access to a <b>state</b> which dictates the current behavior and appearance of the component (Later, with React Hooks introduced in version 16.8, we are able to declare a stateful component without declaring a class).This <b>state</b> can be modified by calling the <b>setState() function.</b> One or more variables, arrays, or objects defined as part of the state can be modified at a time with the <b>setState() function.</b></p>
+
+            <h3>Implementing state in class components</h3>
+            <p>let us understand how to use state in class components with the help of an example</p>
+            <p><b>Example:</b> Program to demonstrate the use of state in class components. Open the <b>App.js</b> file and replace the code with the below code.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react"; <br>
+                        <br>
+                        class App extends React.Component { <br>
+                        &nbsp;&nbsp;&nbsp;constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(props); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.state = { change: true }; <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;&nbsp;render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick={() =&gt; { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setState({ change: !this.state.change }); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}} <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Here! <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.change ? ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Welcome to GeeksforGeeks&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) : ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;A Computer Science Portal for Geeks&lt;/h1&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)} <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;); <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        export default App; <br>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Passing props in class components</h3>
+            <p>Data is passed to other components with the help of props. Props work similarly for all components in ReactJS be they class or functional. Props are always passed down from the parent component to the child component. ReactJS does not allow a component to modify its own props as a rule. The only way to modify the props is to change the props being passed from the parent component to the child component. This is generally done by passing a reference to a function in the parent component, which changes the props being passed to the child component.</p>
+            <p>Example: Program to demonstrate the use of props in class components. Open the <b>App.js</b> file and replace the code with the below code. </p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React from "react";<br>
+                        <br>
+                        class App extends React.Component { <br>
+                        &nbsp;&nbsp;&nbsp;render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &lt;h1&gt;{this.props.data}&lt;/h1&gt;; <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        class propsExample extends React.Component { <br>
+                        &nbsp;&nbsp;&nbsp;constructor(props) { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(props); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.state = { change: true }; <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        &nbsp;&nbsp;&nbsp;render() { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onClick={() =&gt; { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setState({ change: !this.state.change }); <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}} <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click Here! <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.change ? ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;App data="Welcome to GeeksforGeeks" /&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) : ( <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;App data="A Computer Science Portal for Geeks" /&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)} <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt; <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;); <br>
+                        &nbsp;&nbsp;&nbsp;} <br>
+                        } <br>
+                        <br>
+                        export default App;
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+

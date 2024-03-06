@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React useRef Hooks</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="../Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="../Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- javascript logo  -->
+        <div id="img">
+            <img src="../Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React useRef Hooks</h2>
+            <p>The <b>useRef</b> Hook allows you to persist values between renders.</p>
+            <p>It can be used to store a mutable value that does not cause a re-render when updated.</p>
+            <p>It can be used to access a DOM element directly.</p>
+            
+            <h3>Does Not Cause Re-renders</h3>
+            <p>If we tried to count how many times our application renders using the <b>useState</b> Hook, we would be caught in an infinite loop since this Hook itself causes a re-render.</p>
+            <p>To avoid this, we can use the <b>useRef</b> Hook.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use useRef to track application renders.</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                      1
+                      2
+                      3
+                      4
+                      5
+                      6
+                      7
+                      8
+                      9
+                      10
+                      11
+                      12
+                      13
+                      14
+                      15
+                      16
+                      17
+                      18
+                      19
+                      20
+                      21
+                      22
+                      23
+                      24
+                      25
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState, useEffect, useRef } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                        <br>
+                        function App() { <br>
+                          const [inputValue, setInputValue] = useState(""); <br>
+                          const count = useRef(0); <br>
+                         <br>
+                          useEffect(() => { <br>
+                            count.current = count.current + 1; <br>
+                          }); <br>
+                       <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;input <br>
+                                type="text" <br>
+                                value={inputValue} <br>
+                                onChange={(e) =&gt; setInputValue(e.target.value)} <br>
+                              /&gt; <br>
+                              &lt;h1&gt;Render Count: {count.current}&lt;/h1&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                        <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;);
+                    </div>
+                </div>
+            </div>
+            
+            <p><b>useRef()</b> only returns one item. It returns an Object called <b>current</b>.</p>
+            <p>When we initialize <b>useRef</b> we set the initial value: <b>useRef(0)</b>.</p>
+
+            <p>It's like doing this: <b>const count = {current: 0}.</b> We can access the count by using <b>count.current.</b></p>
+
+            <h3>Accessing DOM Elements</h3>
+            <p>In general, we want to let React handle all DOM manipulation.</p>
+            <p>But there are some instances where <b>useRef</b> can be used without causing issues.</p>
+            <p>In React, we can add a <b>ref</b> attribute to an element to access it directly in the DOM.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use useRef to focus the input:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                      1
+                      2
+                      3
+                      4
+                      5
+                      6
+                      7
+                      8
+                      9
+                      10
+                      11
+                      12
+                      13
+                      14
+                      15
+                      16
+                      17
+                      18
+                      19
+                      20
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useRef } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                         <br>
+                        function App() { <br>
+                          const inputElement = useRef(); <br>
+                         <br>
+                          const focusInput = () => { <br>
+                            inputElement.current.focus(); <br>
+                          }; <br>
+                         <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;input type="text" ref={inputElement} /&gt; <br>
+                              &lt;button onClick={focusInput}&gt;Focus Input&lt;/button&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                         <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;); <br>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Tracking State Changes</h3>
+            <p>The <b>useRef</b> Hook can also be used to keep track of previous state values.</p>
+            <p>This is because we are able to persist <b>useRef</b> values between renders.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Example:</h3>
+                <p>Use useRef to keep track of previous state values:</p>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                      1
+                      2
+                      3
+                      4
+                      5
+                      6
+                      7
+                      8
+                      9
+                      10
+                      11
+                      12
+                      13
+                      14
+                      15
+                      16
+                      17
+                      18
+                      19
+                      20
+                      21
+                      22
+                      23
+                      24
+                      25
+                      26
+                    </div>
+                    <div class="Example-code-syntex">
+                        import { useState, useEffect, useRef } from "react"; <br>
+                        import ReactDOM from "react-dom/client"; <br>
+                         <br>
+                        function App() { <br>
+                          const [inputValue, setInputValue] = useState(""); <br>
+                          const previousInputValue = useRef(""); <br>
+                         <br>
+                          useEffect(() => { <br>
+                            previousInputValue.current = inputValue; <br>
+                          }, [inputValue]); <br>
+                         <br>
+                          return ( <br>
+                            &lt;&gt; <br>
+                              &lt;input <br>
+                                type="text" <br>
+                                value={inputValue} <br>
+                                onChange={(e) =&gt; setInputValue(e.target.value)} <br>
+                              /&gt; <br>
+                              &lt;h2&gt;Current Value: {inputValue}&lt;/h2&gt; <br>
+                              &lt;h2&gt;Previous Value: {previousInputValue.current}&lt;/h2&gt; <br>
+                            &lt;/&gt; <br>
+                          ); <br>
+                        } <br>
+                         <br>
+                        const root = ReactDOM.createRoot(document.getElementById('root')); <br>
+                        root.render(&lt;App /&gt;);
+                    </div>
+                </div>
+            </div>
+            <p>This time we use a combination of <b>useState</b>, <b>useEffect</b>, and <b>useRef</b> to keep track of the previous state.
+            </p>
+            <p>In the <b>useEffect</b>, we are updating the <b>useRef</b> current value each time the <b>inputValue</b> is updated by entering text into the input field.</p>
+        </div>
+    </div>
+</body>
+
+</html>

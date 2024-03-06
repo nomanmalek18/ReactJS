@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>CSS Styling React App</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Styling React JS</h2>
+            <p>In React.js, there are several ways to apply styling to components.</p>
+            
+            <p>Here are some common approaches:</p>
+
+            <ul>
+                <li>inline styles</li>
+                <li>CSS Modules</li>
+                <li>CSS-in-JS library</li>
+                <li>External CSS Files</li>
+                <li>CSS preprocessors</li>
+            </ul>
+
+            <h3>Inline CSS</h3>
+            <p>you can <b>apply inline styles</b> directly to JSX elements using the style attribute.</p>
+            <p>The style attribute takes a javascript object with camel-cased CSS property-value pairs.</p>
+
+            <!-- Example -->
+            <div class="Example">
+               <h3>Inline CSS</h3>
+               <div class="Example-code">
+                   <div class="Example-Number">
+                       1
+                       2
+                       3
+                       4
+                       5
+                   </div>
+                   <div class="Example-code-syntex">
+                    const styles = { <br>
+                        color : "red", <br>
+                        fontSize : "16px" <br>
+                    }; <br>
+                    &lt;div style={styles}&gt;hello worls&lt;/div&gt;;
+                    </div>
+                </div>
+            </div>
+            
+            <h3>CSS Modules</h3>
+            <p>CSS Modules allow you to write <b>CSS stylesheets</b> and <b>import</b> them as javascript modules.</p>
+
+            <p>CSS class names are scopes locally to the component, preventing style conflicts. you can <b>import</b> the CSS file and use the defined class names in your JSX code</p>
+
+            <!-- Example -->
+            <div class="Example">
+               <h3>CSS Modules</h3>
+               <div class="Example-code">
+                   <div class="Example-Number">
+                       1
+                       2
+                       3
+                   </div>
+                   <div class="Example-code-syntex">
+                        import styles from "./styles.module.css"; <br>
+                        <br>
+                        &lt;div className={styles.container} &gt;Hello&lt;/div&gt;
+                    </div>
+               </div>
+            </div>
+            
+            <h3>CSS-in-JS libraries</h3>
+            <p>CSS-in-JS libraries are a popular approach for styling in React.jS that allows you to write CSS directly in your javascript code. <b>such as styled components, emotion, etc..</b></p>
+
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>CSS-in-JS libraries</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                    </div>
+                    <div class="Example-code-syntex">
+                         import styled from "styled.components"; <br>
+                         <br>
+                         const stylediv = styled.div`<br>
+                            color : red; <br>
+                            font-size: 16px; <br>
+                         `; <br>
+                        <StyleDiv>Hello world</StyleDiv>;
+                    </div>
+                </div>
+            </div>
+                         
+            <h3>External CSS Files</h3>
+            <p>you can also <b>use traditional</b> rxternal CSS files and import them into your components.</p>
+            <p>in thsis case, you <b>import thse CSS File </b> and add the corresponding class names to your JSX elements. The styles defined in the external CSS file will be applied <b>globally</b></p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3>External CSS Files</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                    </div>
+                    <div class="Example-code-syntex">
+                        import "./styles.css"; <br>
+                        <br>
+                        &lt;div className="container"&gt;Hello world&lt;/div&gt;
+                    </div>
+                </div>
+            </div>
+            <h3>CSS Preprocessors</h3>     
+
+            <p>eact supports the use of CSS preprocessors like <b>Sass, Less, or stylus.</b> you can write your styles using the preprocessor syntax and compile them into regular CSS that can be imported and used in your React components.</p>
+        </div>
+    </div>
+</body>
+
+</html>

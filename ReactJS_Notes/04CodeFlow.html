@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>ReactJS Code Flow</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>ReactJS Code Flow</h2>
+            <h3>Component Rendering</h3>
+            <p>React is a Component besed library, and everything starts with Component.</p>
+            <p>you create reuseable Components using React's Component or Function Component syntax.</p>
+            <p>Components are resposible for Rendering the UI and managing their own state and props.</p>
+            
+            <h3>Component Hierarchy</h3>
+            <p>Component can be nested within each other, forming a Component can pass data (props) to child Component.</p>
+
+            <h3>State & Props</h3>
+            <p>Components can have twe type of data : <b>state and props.state</b>represents the internal data of a Component, and it can be changed by the Component itself using setState(). <b>Props</b> are passed down from parent Components to child Components and are read-only.</p>
+
+            <h3>Rendering</h3>
+            <p>when a Component't state or props change, React triggers a <b>re-render</b> of that Component abd its child Components.</p>
+            <p>The render method of each Components it called, generathing a <b>virtual representation</b> of the Component's UI.</p>
+
+            <h3>Virtual DOM</h3>
+            <p>React uses a virtual representation of the actual DOM called the virtual DOM.</p>
+            <p>it's a lightweight <b>copy of the real DOM.</b></p>
+            <p>During the Rendering process, React creates a <b>new virtual DOM</b></p>
+            <p>representation, Component it with the previous one, and identifies the differences ( referred to as the "diffing" process)</p>
+
+            <h3>Reconciliation</h3>
+            <p>React efficiently <b>upadates only the necessary parts of the real DOM</b> based on the differences found in the virtual DOM.</p>
+            <p>This process os called <b>reconciliation,</b> and it helps optimize performance by minimizing unnecessary DOM manipulations.</p>
+
+            <h3>Event Handling</h3>
+            <p>React provides a <b>synthetic event</b> system that abstracts away the differences between browsers.</p>
+            <p>you can attach <b>event handlers</b> to Components and respond to user interactions, such as button click or form submissions.</p>
+
+            <h3>Lifecycle Methods</h3>
+            <p>React Components have lifecycle method that allow you to <b>hook into different stages og a Component's life</b> such as initialization, rendering, snd unmounting.</p>
+            <p>you can use these methods to perform actions like <b>fatching data,</b> subscribing to <b>events,</b> or cleaning up <b>resources.</b></p>
+
+            <h3>Updating State/Props</h3>
+            <p>when a Component's state or props needs to be updated, you can use setState() to modify the state.React will then re-render the Component and its children, reflecting the update date in the UI.</p>
+
+            <h3>Component Communiction</h3>
+            <p>Components can Communiction with each other <b>through props.</b> date can be passed from <b>parent to child</b> Components, and child Components can notufy parent Components of changes using callback Functions.</p>
+
+        </div>
+    </div>
+</body>
+
+</html>
