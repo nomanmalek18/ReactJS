@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Higher Order Component</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>HOC (Higher Order Component)</h2>
+            
+            <h3>Whats Is HOC?</h3>
+
+            <p>In React, a <b>Higher-Order Component (HOC)</b> is a function that takes a component as an input and returns a new enhanced component as output.
+            </p>
+            <p>It's like a <b>special function</b> that can make your components more <b>powerful</b> and add <b>extra functionality</b> to them.
+            </p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                        const EnhancedComponent = withExtraFunctionality (OriginalComponent);
+
+                        // Example
+                        
+                        const IronMan = withSuit (Tony Stark)
+                    </div>
+                </div>
+            </div>
+
+            <h3>HOC Example</h3>
+
+            <p>Here, i am going to explain with the simple <b>counter</b> app components
+            </p>
+            <p>if we require multiple counter component with useState Hook & onClick event handler function
+            </p>
+            <p>we need to add useState & function in <b>each component</b> & it will make code lengthy or <b>repeating same code</b> again and again</p>
+
+            <h3>Without HOC</h3>
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+
+                        import React, { useState } from "react";
+
+                            function Item2() {
+                                const [cost, setCost] = useState(10);
+                                let costHandler() =>{
+                                    setCost(cost. 10);
+                        
+                                };
+                        
+                            return (
+                                &lt;div className="item2"&gt;
+                                    &lt;h1&gt;
+                                        Item2 Cost: &lt;span&gt;*{cost}&lt;/span&gt;
+                                    &lt;/h1&gt;
+                                    &lt;button onClick={costHandler}&gt;
+                                        Increase Cost
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                            );
+                        }
+                        
+                        export default Item2;
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+
+                        import React, { useState } from "react";
+
+                            function Item1() {
+                                const [cost, setCost] = useState(10);
+                                let costHandler() =>{
+                                    setCost(cost. 10);
+                        
+                                };
+                        
+                            return (
+                                &lt;div className="Item1"&gt;
+                                    &lt;h1&gt;
+                                        Item1 Cost: &lt;span&gt;*{cost}&lt;/span&gt;
+                                    &lt;/h1&gt;
+                                    &lt;button onClick={costHandler}&gt;
+                                        Increase Cost
+                                    &lt;/button&gt;
+                                &lt;/div&gt;
+                            );
+                        }
+                        
+                        export default Item1;
+                    </div>
+                </div>
+            </div>
+            
+            <h3>HOC Function</h3>
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState } from "react";
+                        
+                            function UpdatedComponent(OriginalComponent)
+                                { function NewComponent() {
+                                    const [cost, setCost] = useState(10);
+                                    let costHandler = () =>{
+                                        setCost(cost + 10); 
+                                    };
+                                return (
+                                    &lt;OriginalComponent
+                                        costHandler={costHandler}
+                                        cost={cost}
+                                    /&gt;
+                                )
+                            }
+                            return NewComponent; 
+                        }
+                        export default UpdatedComponent;
+                    </div>
+                </div>
+            </div>
+            
+            <h3>In the example</h3>
+
+            <p>Now, useState & event handler function <b>removed</b> from Item1 & Item2 component
+            </p>
+            <p>and added functionality in HOC this returns a <b>enhanced component</b> with adding <b>additional functionality</b> to original component
+            </p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState } from "react";
+                        import UpdatedComponent from "./HOC";
+
+                        function Item1 ({cost, costHandler }){
+                            return (    
+                                &lt;div className="item1"&gt;
+                                    &lt;h1&gt;
+                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt; 
+                                    &lt;/h1&gt;
+                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt;
+                                &lt;/div&gt;
+                            );
+                        }
+                        export default UpdatedComponent (Item1);
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState } from "react";
+                        import UpdatedComponent from "./HOC";
+
+                        function Item2 ({cost, costHandler }){
+                            return (    
+                                &lt;div className="Item2"&gt;
+                                    &lt;h1&gt;
+                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt; 
+                                    &lt;/h1&gt;
+                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt;
+                                &lt;/div&gt;
+                            );
+                        }
+                        export default UpdatedComponent (Item2);
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

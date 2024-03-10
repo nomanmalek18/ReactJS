@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Context API In React JS</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Context API | React</h2>
+                
+            <p>in React , the Context API is a built - in feature that provides a way to <b>manage global state</b> or <b>share data</b> across components in a component tree <b>without the need to pass props</b> explicitly through every intermediate component</p>
+
+            <p>It's designed to <b>solve the problem</b> of <b>" prop drilling , "</b> where data needs to be passed down multiple levels in the component hierarchy .</p>
+
+            <p>Context API consists of two main components.</p>
+            <ul>
+                <li>Provider</li>
+                <li>Consumer</li>
+            </ul>
+
+            <h3>Context Provider</h3>
+            <p>This component creates a context and <b>holds the state</b> that you want to share with other components. it waps around the components that need access to the shared state. </p>
+
+            <h3>Context Consumer</h3>
+            <p>This components consumes the data stored in the context and allows components to <b>access and use</b> that data.</p>
+
+            <h3>Create Context API</h3>
+            <p>You can create context API using simple 3 steps</p>
+
+            <ol>
+                <li>Create</li>
+                <li>Provide</li>
+                <li>Consume</li>
+            </ol>
+
+            <h3><b>1.</b> Create Context</h3>
+            <p>import React and create a new context using <b>React.createContext()</b></p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        import React from 'react' <br>
+                        <br>
+                        const MyContext = React.createContext();
+                    </div>
+                </div>
+            </div>
+
+            <h3><b>2.</b> Provide</h3>
+            <p>Create a <b>provider component</b> that araps around the components needing access to the context's data. <b>Provide</b> the <b>shred data using the value prop.</b></p>
+
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        const MyContextProvider = ({children}) =>{
+                        // shared data 
+                            const sharedData = "hello from context!";
+
+                            return(
+                                &lt;MyContext.provider value={sharedData}&gt;
+                                    {children} { //child comopnent}
+                                &lt;/MyContext.provider&gt;
+                            );
+                        };
+                    </div>
+                </div>
+            </div>
+
+            <h3><b>3></b> Consume</h3>
+            <p>Consume the context data in the child components using the <b>Consumer component.</b> (or the  <b>useContext</b> hook for functional components )</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        const ChildComponent = () =>{
+                            return (
+                                <MyContext.Consumer>
+                                    { (data) =>(
+                                        <div>
+                                            <h3>child component</h3>
+                                            <p>Received data: {data}</p>
+                                        </div>
+                                    )}
+                                </MyContext.Consumer>
+                            );
+                        };
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+
+</html>

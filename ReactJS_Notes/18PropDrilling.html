@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Prop Drilling In React</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>Prop Drilling</h2>
+            <h3>What is Prop Drilling?</h3>
+
+            <p>In React, <b>"prop drilling"</b> refers to the <b>process of passing data</b> from a high-level component down <b>to a deep-level component </b> through intermediate components that do not need the data themselves.</p>
+
+            <p>This can happen when components in a component tree <b>need access to shared data</b>, but they are not direct descendants of each other.</p>
+
+            <h3>prop Drilling | Example</h3>
+
+            <ul>
+                <li>ParentComponent</li>
+                <li>ChildComponent</li>
+                <li>GrandchildComponent </li>
+            </ul>
+
+            <p><b>Prop drilling</b> is when data from the <b>App component</b> needs to be accessed by the <b>GrandchildComponent</b>, but it has to be passed through the <b>ParentComponent</b> and <b>ChildComponent</b> without being directly passed as props to them</p>
+
+            <h3>Prop Drilling | Process</h3>
+
+            <p>Prop drilling process look like:</p>
+
+                <ul>
+                    <li><b>App component has the data</b> that GrandchildComponent needs.</li>
+                    <li>App passes the data as a prop  <b>to ParentComponent</b>.</li>
+                    <li>ParentComponent passes the same data as a prop <b>to ChildComponent</b>.</li>
+                    <li>ChildComponent finally passes the data as a prop <b>to GrandchildComponent</b>.</li>
+                </ul>
+
+                <h3>Solution</h3>
+
+                <ol>
+                    <li>React Context API or</li>
+                    <li>useContext Hook with React Context API</li>
+                    <li>Redux</li>
+                    <li>Mobx</li>
+                </ol>
+        </div>
+    </div>
+</body>
+
+</html>

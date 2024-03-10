@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React Hooks useState()</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>useState() | React</h2>
+            <p>This hooks allows you to add <b>state</b> to functional components. it returns a <b>state variable</b> and a <b>function to that variable</b>.</p>
+            <p>We initialize our state by <b>calling useState</b> in our fucntion component.</p>
+            <p>useState accepts an <b>initail state</b> and returns two values:</p>
+
+            <ul>
+                <li>The <b>current state.</b></li>
+                <li>A function that <b>updated the state.</b></li>
+            </ul>
+
+            <h3>What can state hold?</h3>
+            <p>The useState hook can be used to keep track of</p>
+
+            <ul>
+                <li>String</li>
+                <li>Numbers</li>
+                <li>Booleans</li>
+                <li>Arrays</li>
+                <li>Object</li>
+                <li>Any combination of these!</li>
+            </ul>
+
+            <h3>useState() | initialize</h3>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        import React { useState } from "react";
+
+                        function FavoriteColor (){
+                            const [ // state variables , state updater function ] = useState("");
+
+                            const [ color , setColor ] = useState("");
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <p>we are <b>destructuring</b> useState  from <b>react</b> as it a named export.(useState returns two values)</p>
+
+            <p><b>Variables</b> that can be named anything you would like</p>
+
+            <h3>Read & update state</h3>
+            
+            <p><u>Read state</u></p>
+            <p>after initailize we can include our <b>state</b> anywhere in our component.</p>
+            
+            <p><u>Update</u></p>
+            <p>To <b>update</b> our state, we <b>use our state updater function.</b> </p>
+
+            <p><b>Note:</b></p>
+            <p>We should never directly update state. Ex <b>color = "red"</b> is <b>not allowed.</b></p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Counter App</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, { useState } from "react";
+                             
+                            function HookUseState() {
+
+                                // <b>importing</b> useState & initailizing
+                                const [count, setCount] = useState(0);
+
+                                // function for <b>updating state</b> by adding + 1
+                                const increase = () => {
+                                    setCount (count + 1);
+                                };
+
+                                // function for <b>updating state</b> by subtracting - 1
+                                const decrease = () => {
+                                    if (count &lt; 0 ) {
+                                        return;
+                                    } else {
+                                        setCount (count - 1);
+                                    }
+                                };
+                                
+                                return (
+                                    &lt;div&gt;
+                                        &lt;h1 style={{ color: lightblue }}&gt;Counter | useState() &lt;/h1&gt;
+                                        &lt;h1&gt;Counter : {count}&lt;/h1&gt;
+                                        &lt;button onclick={increase} &gt;click to increase&lt;/button&gt;
+                                        &lt;button onclick={decrease} &gt;click to decrease&lt;/button&gt;
+                                        // calling state <b>updater</b> function
+                                    &lt;/div&gt;
+                                );
+                            }
+                            
+                            export default HookUseState;
+                    </div>
+                </div>
+            </div>
+
+            <h3>State With Object</h3>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>Counter App</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, { useState } from "react";
+                             
+                            function Bike() {
+                                // use one <b>State</b> and include an Object
+                                const [bike, setBike] = useState({
+                                    brand: "ducatti",
+                                    model: "panigale",
+                                    year: "2023",
+                                    color: "red"
+                                });
+
+                                // spreading the <b>PreviousState</b> and <b>overwriting</b> only the color 
+                                const updateColor = () => {
+                                    setBike(PreviousState =>{
+                                        return {...PreviousState, color: "black" }
+                                    });
+
+                                    return (
+                                        &lt;&gt;
+                                            &lt;h1&gt;Bikes&lt;/h1&gt;
+                                            &lt;p&gt;
+                                                My fav bike is {bike.brand} {bike.model} 
+                                                it is a {bike.color} from {bike.year}.
+                                                // read state from object
+                                            &lt;/p&gt;
+                                            &lt;button onclick={updateColor}&gt;Black color&lt;/button&gt;
+                                            // state update 
+                                        &lt;/&gt;
+                                    );
+                                }        
+                                
+                            }
+                            
+                            export default Bike;
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

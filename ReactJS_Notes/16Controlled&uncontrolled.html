@@ -24,6 +24,137 @@
         <!-- container items  -->
         <div class="container-items">
             <!-- Notes heading -->
+            <h2>Controlled & Uncontrolled</h2>
+            <p>In React, there are two main approaches to <b>handling form inputs</b>:</p>
+
+            <ul>
+                <li><b>Controlled</b> components</li>
+                <li><b>Uncontrolled</b> components.</li>
+            </ul>
+
+            <p><b>Controlled</b> components provide more control and validation, while</p>
+
+            <p><b>uncontrolled</b> components are simpler and useful for basic forms or intermittent value access.</p>
+
+            <h3>Controlled components</h3>
+
+            <p>Controlled components are form inputs whose values are <b>controlled by React state</b>.</p>
+            
+            <p>The state variables are updated whenever the value of the input changes, and the <b>value</b> of the input is set explicitly through the <p>value prop</p>.</p>
+            
+            <p>The <b>onChange</b> event handler is used to update the state.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>Controlled components</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState } from "react"; <br>
+ <br>
+                        function ControlledComponent() { <br>
+                            const [name, setName] = useState(""); <br>
+                            <br>
+                            const handleChange = (e) => { <br>
+                                setName(e.target.value);  <br>
+                            }; <br>
+                            
+                            return ( <br>
+                                &lt;input <br>
+                                    type="text" <br>
+                                    value={name} <br>
+                                    onChange={handleChange} <br>
+                                /&gt; <br>
+                            ); <br>
+                        }
+                                            
+                    </div>
+                </div>
+            </div>
+
+            <h3>In the example</h3>
+
+            <p>In the example, the <b>name</b> state variable is used to control the value of the input field.</p>
+            <p>The <b>handleChange</b> function updates the <b>name</b> state whenever the input value changes.</p>
+            <p>The value of the input is set to the current value of the name state variable through the <b>value prop</b>.</p>
+
+
+            <h3>Uncontrolled components</h3>
+
+            <p>Uncontrolled components are form inputs that <b>manage their own state internally</b>, rather than being controlled by React state.</p>
+
+            <p>You can access the current value of the input using a <b>ref</b> after the form is submitted or whenever needed.</p>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>Controlled components</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useRef } from "react";
+
+                        function UncontrolledComponent() {
+                            const inputRef = useRef(null);
+                            const handleSubmit = (e) => {
+                                e.preventDefault();
+                                console.log(inputRef.current.value);
+                            };
+                        
+                        
+                            return (
+                                &lt;form onSubmit={handleSubmit}&gt;
+                                    &lt;input
+                                        type="text"
+                                        ref={inputRef}
+                                /&gt;
+                                    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                                &lt;/form&gt;
+                            );
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <h3>In the example</h3>
+
+            <p>In the example, the <b>inputRef</b> is used to create a <b>ref</b> for the input field.
+            </p>
+            <p>The <b>handleSubmit</b> function accesses the current value of the input using <b>inputRef.current.value</b>.</p>
+            <p>The form submission logic can be implemented to utilize the input value as required.</p>
         </div>
     </div>
 </body>
