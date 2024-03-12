@@ -27,7 +27,105 @@
             <h2>useEffect() | React</h2>
             <p>In React, useEffect is one of the most essential Hooks <b>used to manage side effects</b> in functional.</p>
             <p>Side Effecs are operations that occur outside of the component's <b>render cycle,</b> such as data fetching, subscriptions, or manually interacting with the DOM.</p>
-            <p></p>
+            <p>The useEffect hook allow you to <b>Perform these side effects after the component has rendered.</b></p>
+
+            <h3>useEffect() | syntax</h3>
+            <p>useEffect accepts <b>two arguments.</b> The second argumentsis <b>optinal.</b></p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        useEffect(<function>, <dependency>)
+                    </div>
+                </div>
+            </div>
+
+            <p>common <b>use cases</b> for useEffect.</p>
+            <ul>
+                <li>Data Fetching:</li>
+                <li>DOM Manipulation:</li>
+                <li>Subscriptions:</li>
+                <li>Timers And Intervals:</li>
+                <li>Cleanup Tasks</li>
+            </ul>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>useEffect() | syntax</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, { useEffect } from "react";
+                            
+                            function MyComponent(){
+                                useEffect(()=>{
+                                    // Side effects code goes here this function will run after every render of the component 
+                                    
+                                    // Clean-up function (Optional)
+                                    return (){
+                                        //  This function will run before he component unmounts of before the next re-render, depending on the dependencies.
+                                    };
+                                },[dependency1, dependency2]);
+
+                                // component JSX
+                                return <div>...</div>;
+                            }
+                    </div>
+                </div>
+            </div>
+
+            <h3>useEffect() | Effect Function:</h3>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        useEffect(<function>, <dependency>)
+                    </div>
+                </div>
+            </div>
+
+            <p>The <b>first argument of useEffect</b> is the effect function. this function is called after the <b>component has rendered,</b> and it's where you <b>place the code</b> for your sode effect.</p>
+
+            <p>it can be an <b>asynchronous</b> function, and you can perform any asynchronous opesations like data fetching inside it.</p>
+
+            <h3>useEffect() | Dependency Array:</h3>
+            
+            <!-- Example -->
+            <div class="Example">
+                <h3></h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        useEffect(<function>, <dependency>)
+                    </div>
+                </div>
+            </div>
+
+            <p>The <b>second argument</b> of useEffect is an array of dependencies. This array <b>tells React when ti re-run</b> the effect. and its opational</p>
+
+            <p>You can include to control when the effect should be executed.</p>
+
+            <h3>useEffect() |Based On Dependency</h3>
+            <p>1.  If the dependency <b><u>array is empty</u>([]),</b> the effect will only run once, after the initail render</p>
+
+            <p>2.  If the dependency <b><u>array is not provided</u></b> the effect will run after every render of the component.</p>
+
+            <p>3. If the dependency <b><u>array contains variables,</u></b> the effect will only be re-executed when any of those variables change.</p>
+
+            <h3>useEffect () | Clean-up Function</h3>
+            <p>The Clean-up function is optional and is used to Perform any <b>necessary Clean-up or resource disposal</b> when the components unmounts of before the next efect runs (depending on the dependencies specified in the dependency array.)</p>
+
+            <p><b>Example:</b> for setinterval() function using clearinterval() to clear</p>
         </div>
     </div>
 </body>
