@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React Hooks useContext()</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>useContext() | React</h2>
+            <p>In React, the useContext hook is used to <b>consume data from a React context.</b> context provides a way to share data between components <b>without having to pass props</b> manually at every level of the component tree.</p>
+
+            <p>It allows you to create a global state that <b>can be accessed b any component that needs it </b> regardless of where it is in the component heirarchy.</p>
+
+            <h3>How to use "useContext"</h3>
+            <p><b>1.</b> Create the context</p>
+            <p>First, you need to create context using the <b>React,createContext()</b>method. this method returns an object with tow properties: provider and consumer.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>// context.js</h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        import React from "react";
+                        const MyContext = React.;;createContext();
+
+                        export default MyContext;
+                    </div>
+                </div>
+            </div>
+
+            <p><b>2.</b> Provide the Data</p>
+            <p><b>Wrap the component(s)</b> that should have access to the shared data with the provider, this is typically done at the highest level in component tree.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>// App.js</h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        import React from "react";
+                        import MyContext from "./context";
+                        import componentA from "./componentA"
+
+                        function App (){
+                            const shareDData = "This data is shared!";
+
+                            return(
+                                <MyContext.provider value ={shareData}>
+                                    <componentA />
+                                </MyContext.provider>
+                            )
+                        }
+                        export default App;
+                    </div>
+                </div>
+            </div>
+
+            <p><b>3.</b> consume the data using useContext:</p>
+            <p>Now, in any component that needs to access the shared data, you can use the <b>useContext</b> hook to consume the context</p>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>// App.js</h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        import React {useContext} from "react";
+                        import MyContext from "./context";
+
+                        function componentA (){
+                            const sharedData = useContext(MyContext);
+
+                            return <div>{sharedData}</div>
+                        }
+                        export default componentA;
+                    </div>
+                </div>
+            </div>
+
+            <p>using useContext hepls in keeping your component tree <b>clean and concise</b> as it  eliminates the need to <b>pass props\s through multiple levels</b> just to react a distant component that requires the data.</p>
+            <p>it is a <b>provider tool for managing state</b> in your React applications and making data flow more efficient.</p>
+        </div>
+    </div>
+</body>
+
+</html>
