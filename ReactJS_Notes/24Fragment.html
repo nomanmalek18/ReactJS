@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>Fragments In React</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>React Fragments</h2>
+            <p>React fragment: Group multiple elements <b>without adding extra</b> DOM wrappers. Useful to return multiple elements from a component's render method wothout extra containers</p>
+            <p>with <b>React 16.2</b> and about Fragments you can use a fragment to avoid adding the extra wrappers, Fragments are denoted by the special syntax:</p>
+            <!-- Example -->
+            <div class="Example-code-syntex">
+                <React.Fragment> or
+            </div>
+
+            <!-- Example -->
+            <div class="Example-code-syntex">
+                <></> the shorthand
+            </div>
+
+            <h3>without Fragments</h3>
+            <p>Prior ti <b>React 16.2</b> you had to wrap them in a single pareny element.</p>
+            <h3>For Example:</h3>
+            
+            <!-- Example -->
+            <div class="Example">
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, from "react";
+                            
+                            const MyComponent() => {
+                                return (
+                                    <div> // Wrapper
+                                        <h1>Hello</h1>
+                                        <p>Thid is a paragraph.</p>
+                                    </div>
+                                );
+                            };
+                            export defaule MyComponent;
+                    </div>
+                </div>
+            </div>
+
+            <h3>With Fragments</h3>
+
+            <p>A fragment is simply an <b>empty element</b> that <b>acts as a container</b> for other elements without rendering any additional DOM nodes.</p>
+
+              <!-- Example -->
+              <div class="Example">
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, from "react";
+                            
+                            const MyComponent() => {
+                                return (
+                                    <> // React Fragment Wrapper
+                                        <h1>Hello</h1>
+                                        <p>Thid is a paragraph.</p>
+                                    </>
+                                );
+                            };
+                            export defaule MyComponent;
+                    </div>
+                </div>
+            </div>
+
+            <h3>With Fragments</h3>
+            <p>Fragments can also have a <b>key prop,</b> just like any other React element. the key prop os useful when you're dynamically rendering lists of fragment. with <b>&gt;React.Fragment&gt;
+            </b></p>
+
+                          <!-- Example -->
+              <div class="Example">
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, from "react";
+                            
+                            const MyComponent({items}) => {
+                                return (
+                                    <> 
+                                    {items.map(()=>(
+                                      <React.Fragment key={item.id}>
+                                        <span>{item.name}</span>
+                                        <br />
+                                        </React.Fragment>
+                                    ))}
+                                    </>
+                                    );
+                            };
+                            export defaule MyComponent;
+                    </div>
+                </div>
+            </div>     
+
+            <h3>If not using Fragments</h3>
+            <p><b><u>Extra DOM nodes:</u></b></p>
+            <p>Using a regular container introduces additional DOM nodec in the rendered output, which can <b>lead to increased memory usage</b> and slightly slower rendering.</p>
+
+        </div>
+    </div>
+</body>
+
+</html>
