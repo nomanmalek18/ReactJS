@@ -138,6 +138,14 @@
             <p><b><u>Extra DOM nodes:</u></b></p>
             <p>Using a regular container introduces additional DOM nodec in the rendered output, which can <b>lead to increased memory usage</b> and slightly slower rendering.</p>
 
+            <p><b><u>CSS Conflicts:</u></b></p>
+            <p>It Wrapper element has its own CSS styles or classes, they might unintentionally affect the layout or styles of the child elements inside the component. </p>
+
+            <p><b><u>Semantic impact:</u></b></p>
+            <p>sometimes, adding extra wrapper elements can change the Semantic structure of the document which might not be desirable from an accessibility standpoint.</p>
+
+            <p><b><u>Nesting depth:</u></b></p>
+            <p>Repeatedly nesting element within multiple container may make the component tree deeper potectially affecting performanse and readability.</p>
         </div>
     </div>
 </body>
