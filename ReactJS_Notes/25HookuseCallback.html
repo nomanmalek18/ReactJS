@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React Hooks useEffect()</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>useCallback() | React</h2>
+            <h3>useCallback()</h3>
+            <p>In react, <b>functions are recreated</b> on each render.</p>
+            <p>When you define a function inside a functional component, it gets <b>recreated every time</b> the componentn re-renders, even if the function body is the same.</p>
+            <p>This can Lead to <b>unnecessary re-rendering of child components</b> that depend on these functions.</p>
+            <p>Here's where <b>useCallback</b> comes into play.</p>
+            <p>it allow you to <b>memoize a function</b>  so that it's only created once and <b>reused</b> across renders, as long as its <b>dependencies</b> (specified in the second argument) remain the some.</p>
+
+                        <!-- Example -->
+            <div class="Example">
+                <h3>// syntax</h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        const memoizedCB = useCallback(callback, depend);
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li><b>callback:</b> The Function that you want to memoize.</li>
+                <li><b>dependencies:</b> An array of dependencies. if any of these dependencies change, the memoized callback will be recreated.</li>
+            </ul>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>useCallback() | Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                    </div>
+                    <div class="Example-code-syntex">
+                            import React, { useState, useCallback } from "react";<br>
+                            <br>
+                            function ParentComponent() {
+                                const [count , setCount] = useState(0);
+
+                                // without useCallback:
+                            }
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
