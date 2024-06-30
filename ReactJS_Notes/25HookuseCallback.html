@@ -58,6 +58,35 @@
                         4
                         5
                         6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                        32
+                        33
+                        34
+                        35
                     </div>
                     <div class="Example-code-syntex">
                             import React, { useState, useCallback } from "react";<br>
@@ -81,30 +110,37 @@
                                 } [count]); <br>
 
                                 return ( <br>
-                                    <div> <br>
-                                        <p>Count : {count}</p> <br>
-                                        {/* Receives the increment function */} <br>
-                                        <ChildComponent increment = {increment} /> <br>
-
-                                        {/* Receives the memoizedIncrement function */} <br>
-                                        <ChildComponent increment = {memoizedIncrement} /> <br>
-                                    </div> <br>
-                                )
-                            };<br>
-
-                            function ChildComponent ({increment}){
-                                return <button onclick={increment}>Increment</button>;
-                            }
-
+                                    &lt;div&gt;  <br>
+                                        &lt;p&gt;Count : {count}&lt;/p&gt;  <br>
+                                        {/* Receives the increment function */}  <br>
+                                        &lt;ChildComponent increment = {increment} /&gt;  <br>
+ <br>
+                                        {/* Receives the memoizedIncrement function */}  <br>
+                                        &lt;ChildComponent increment = {memoizedIncrement} /&gt;  <br>
+                                    &lt;/div&gt;  <br>
+                                ) <br>
+                            }; <br>
+ <br>
+                            function ChildComponent ({increment}){ <br>
+                                return &lt;button onclick={increment}&gt;Increment&lt;/button&gt;; <br>
+                            } <br>
+ <br>
                             export default ParentComponent;
                     </div>
                 </div>
             </div>
 
+            <h3>In The Example</h3>
 
+            <p>without using useCallback, the increment function would be <b>recreated on every render</b> of the ParentComponent. leading to potential performanse issues.</p>
 
+            <p>However, by using useCallback the memoizedIncrement function is <b>only recreated</b> when the count state changes which  <b>optimizes performanse</b> by preventing unnecessary re-renders of the ChildComponent.
+             </p>
 
+            <h3>Remember:</h3>
+            <p>Remember that while useCallbackcan help improve performanse in certion situation , it's important to <b>avoid everusing it</b>.</p>
 
+            <p>only apply it ti function that actually couse performanse issues due to frequent re-creation in most cases, REAC'S built-in reconciliation process handles function re-creation efficiently</p>
 
         </div>
     </div>
