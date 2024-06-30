@@ -62,11 +62,41 @@
                     <div class="Example-code-syntex">
                             import React, { useState, useCallback } from "react";<br>
                             <br>
-                            function ParentComponent() {
-                                const [count , setCount] = useState(0);
+                            function ParentComponent() { <br>
+                                    const [count , setCount] = useState(0);<br>
+                                    <br>
+                                    // without useCallback: <br>
+                                    // A new increment function is created on every render <br>
+                                    <br>
+                                    const increment = ( )=> {<br>
+                                        setCount( count + 1); <br>
+                                    };<br>
+                                
+                                <br>
+                                // without useCallback:<br>
+                                // The function in only re-created on every when count changes  <br>
+    <br>
+                                const memoizedIncrement = useCallback (() => { <br>
+                                    setCount((preCount => preCount + 1)); <br>
+                                } [count]); <br>
 
-                                // without useCallback:
+                                return ( <br>
+                                    <div> <br>
+                                        <p>Count : {count}</p> <br>
+                                        {/* Receives the increment function */} <br>
+                                        <ChildComponent increment = {increment} /> <br>
+
+                                        {/* Receives the memoizedIncrement function */} <br>
+                                        <ChildComponent increment = {memoizedIncrement} /> <br>
+                                    </div> <br>
+                                )
+                            };<br>
+
+                            function ChildComponent ({increment}){
+                                return <button onclick={increment}>Increment</button>;
                             }
+
+                            export default ParentComponent;
                     </div>
                 </div>
             </div>
