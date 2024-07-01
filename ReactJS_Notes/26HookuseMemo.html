@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- web page title  -->
+    <title>React Hooks useMemo()</title>
+    <!-- link style sheet CSS  -->
+    <link rel="stylesheet" href="Assest/styleFile/style.css">
+    <!-- link page favicon -->
+    <link rel="shortcut icon" href="Assest/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- main conatainer  -->
+    <div class="container">
+
+        <!-- ReactJS logo  -->
+        <div id="img">
+            <img src="Assest/images/react.js-logo.png" class="img-logo" alt="logo-reactJS">
+        </div>
+
+        <!-- container items  -->
+        <div class="container-items">
+            <!-- Notes heading -->
+            <h2>useMemo() | React</h2>
+            <h3>useMemo()</h3>
+
+            <p>In React, the useMemo hook in used to <b>memoize the result</b> of a computation, so that the computation
+                is only executed when its <b>dependencies chagne.</b></p>
+            <p>This can be useful to <b>optimize the performanse</b> of expensive calculations or <b>components</b> in
+                functional components.</p>
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>useMemo() | syntax</h3>
+                <div class="Example-code">
+                    <div class="Example-code-syntex">
+                        const memoizedValue = useMemo(()=>{<br>
+                        // computation or calculation goes Here <br>
+                        <br>
+                        return result; <br>
+                        },[dependency1, dependency2, ...]);
+                    </div>
+                </div>
+            </div>
+
+            <p>()=>... This is an inline fucntion that contains the computation or calculation you want to memoize.</p>
+
+            <p><b>dependency1, dependency2, ...</b> An array of dependencies. if any of these dependencies change the
+                memoized value will be recalculated.</p>
+
+
+            <!-- Example -->
+            <div class="Example">
+                <h3>useCallback() | Example</h3>
+                <div class="Example-code">
+                    <div class="Example-Number">
+                        1
+                        2
+                        3
+                        4
+                        5
+                        6
+                        7
+                        8
+                        9
+                        10
+                        11
+                        12
+                        13
+                        14
+                        15
+                        16
+                        17
+                        18
+                        19
+                        20
+                        21
+                        22
+                        23
+                        24
+                        25
+                        26
+                        27
+                        28
+                        29
+                        30
+                        31
+                        32
+                        33
+                        34
+                        35
+                    </div>
+                    <div class="Example-code-syntex">
+                        import React, { useState, useMemo } from "react";<br>
+                        <br>
+                        const myComponent = () => {
+                        const [count, setCount] = useState(0); <br>
+                        <br>
+                        const squaredCount = useMemo(() => {
+                        console.log('calculating squared Count ...'); <br>
+                        return count * count;
+                        }, [count]);
+
+                        // setCounter function
+                        function counterSet(){
+                        setCount((prevCount) => preCount + 1 );
+                        }
+
+                        return(
+                        <div>
+                            <h1>Detail component</h1>
+                            <p>Count: {count}</p>
+                            <p>squared Count: {squaredCount}</p>
+                            <button onclick={counterSet}>Increment Count</button>
+                        </div>
+                        );
+                        };
+                        export default myComponent;
+                    </div>
+                </div>
+            </div>
+
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+</body>
+
+</html>
