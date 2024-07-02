@@ -110,12 +110,12 @@
                         }
 
                         return(
-                        <div>
-                            <h1>Detail component</h1>
-                            <p>Count: {count}</p>
-                            <p>squared Count: {squaredCount}</p>
-                            <button onclick={counterSet}>Increment Count</button>
-                        </div>
+                        &lt;div&gt;
+                            &lt;h1&gt;Detail component&lt;/h1&gt;
+                            &lt;p&gt;Count: {count}&lt;/p&gt;
+                            &lt;p&gt;squared Count: {squaredCount}&lt;/p&gt;
+                            &lt;button onclick={counterSet}&gt;Increment Count&lt;/button&gt;
+                        &lt;/div&gt;
                         );
                         };
                         export default myComponent;
@@ -123,9 +123,18 @@
                 </div>
             </div>
 
-            <h3></h3>
-            <p></p>
+            <h3>In The Example</h3>
+            <p>in this Example, we use useMemo to calculate the squared value of the count state. the useMemo hook will <b>execute the lnline function only</b> when the count change.</p>
+
+            <p>if count remains the same, it will reuse the <b>previously memoized value,</b> thus <b>avoiding unnecessary recalculations.</b></p>
+
+            <p>when you click tha "Increment Count" button, the count wipp Increment, and theh squared count will be <b>recalculated</b> since the count has changed.</p>
+
+            <p>if you click the button <b>multiple times</b> without changing the count, the squared count will no tbe <b>recalculated,</b> and you won't see the console log mesaage more then once.</p>
+
+            <p>Remember useMemo id primarily used to <b>optimize expensive computation</b>  and using it unnecessarily can add unnecessary <b>complexity</b> to your code</p>
         </div>
+
     </div>
 </body>
 
