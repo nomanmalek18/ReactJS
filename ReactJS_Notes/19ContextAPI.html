@@ -75,15 +75,15 @@
                 <h3></h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        const MyContextProvider = ({children}) =>{
-                        // shared data 
-                            const sharedData = "hello from context!";
-
-                            return(
-                                &lt;MyContext.provider value={sharedData}&gt;
-                                    {children} { //child comopnent}
-                                &lt;/MyContext.provider&gt;
-                            );
+                        const MyContextProvider = ({children}) =>{ <br>
+                        // shared data  <br>
+                            const sharedData = "hello from context!"; <br>
+ <br>
+                            return( <br>
+                                &lt;MyContext.provider value={sharedData}&gt; <br>
+                                    {children} { //child comopnent} <br>
+                                &lt;/MyContext.provider&gt; <br>
+                            ); <br>
                         };
                     </div>
                 </div>
@@ -97,17 +97,17 @@
                 <h3></h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        const ChildComponent = () =>{
-                            return (
-                                <MyContext.Consumer>
-                                    { (data) =>(
-                                        <div>
-                                            <h3>child component</h3>
-                                            <p>Received data: {data}</p>
-                                        </div>
-                                    )}
-                                </MyContext.Consumer>
-                            );
+                        const ChildComponent = () =>{  <br>
+                            return ( <br>
+                                &lt;MyContext.Consumer&gt; <br>
+                                    { (data) =&gt;( <br>
+                                        &lt;div&gt; <br>
+                                            &lt;h3&gt;child component&lt;/h3&gt; <br>
+                                            &lt;p&gt;Received data: {data}&lt;/p&gt; <br>
+                                        &lt;/div&gt; <br>
+                                    )} <br>
+                                &lt;/MyContext.Consumer&gt; <br>
+                            ); <br>
                         };
                     </div>
                 </div>

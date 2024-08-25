@@ -53,12 +53,12 @@
                 <h3></h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        import React { useState } from "react";
-
-                        function FavoriteColor (){
-                            const [ // state variables , state updater function ] = useState("");
-
-                            const [ color , setColor ] = useState("");
+                        import React { useState } from "react";  <br>
+ <br>
+                        function FavoriteColor (){ <br>
+                            const [ // state variables , state updater function ] = useState(""); <br>
+ <br>
+                            const [ color , setColor ] = useState(""); <br>
                         }
                     </div>
                 </div>
@@ -92,38 +92,38 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                            import React, { useState } from "react";
-                             
-                            function HookUseState() {
-
-                                // <b>importing</b> useState & initailizing
-                                const [count, setCount] = useState(0);
-
-                                // function for <b>updating state</b> by adding + 1
-                                const increase = () => {
-                                    setCount (count + 1);
-                                };
-
-                                // function for <b>updating state</b> by subtracting - 1
-                                const decrease = () => {
-                                    if (count &lt; 0 ) {
-                                        return;
-                                    } else {
-                                        setCount (count - 1);
-                                    }
-                                };
-                                
-                                return (
-                                    &lt;div&gt;
-                                        &lt;h1 style={{ color: lightblue }}&gt;Counter | useState() &lt;/h1&gt;
-                                        &lt;h1&gt;Counter : {count}&lt;/h1&gt;
-                                        &lt;button onclick={increase} &gt;click to increase&lt;/button&gt;
-                                        &lt;button onclick={decrease} &gt;click to decrease&lt;/button&gt;
-                                        // calling state <b>updater</b> function
-                                    &lt;/div&gt;
-                                );
-                            }
-                            
+                            import React, { useState } from "react"; <br>
+                              <br>
+                            function HookUseState() { <br>
+ <br>
+                                // <b>importing</b> useState & initailizing <br>
+                                const [count, setCount] = useState(0); <br>
+ <br>
+                                // function for <b>updating state</b> by adding + 1 <br>
+                                const increase = () => { <br>
+                                    setCount (count + 1); <br>
+                                }; <br>
+ <br>
+                                // function for <b>updating state</b> by subtracting - 1 <br>
+                                const decrease = () => { <br>
+                                    if (count &lt; 0 ) { <br>
+                                        return; <br>
+                                    } else { <br>
+                                        setCount (count - 1); <br>
+                                    } <br>
+                                }; <br>
+                                 <br>
+                                return ( <br>
+                                    &lt;div&gt; <br>
+                                        &lt;h1 style={{ color: lightblue }}&gt;Counter | useState() &lt;/h1&gt; <br>
+                                        &lt;h1&gt;Counter : {count}&lt;/h1&gt; <br>
+                                        &lt;button onclick={increase} &gt;click to increase&lt;/button&gt; <br>
+                                        &lt;button onclick={decrease} &gt;click to decrease&lt;/button&gt; <br>
+                                        // calling state <b>updater</b> function <br>
+                                    &lt;/div&gt; <br>
+                                ); <br>
+                            } <br>
+                             <br>
                             export default HookUseState;
                     </div>
                 </div>
@@ -144,39 +144,39 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                            import React, { useState } from "react";
-                             
-                            function Bike() {
-                                // use one <b>State</b> and include an Object
+                            import React, { useState } from "react"; <br>
+                              <br>
+                            function Bike() { <br>
+                                // use one <b>State</b> and include an Object <br>
                                 const [bike, setBike] = useState({
-                                    brand: "ducatti",
-                                    model: "panigale",
-                                    year: "2023",
-                                    color: "red"
-                                });
-
-                                // spreading the <b>PreviousState</b> and <b>overwriting</b> only the color 
-                                const updateColor = () => {
-                                    setBike(PreviousState =>{
-                                        return {...PreviousState, color: "black" }
-                                    });
-
-                                    return (
-                                        &lt;&gt;
-                                            &lt;h1&gt;Bikes&lt;/h1&gt;
-                                            &lt;p&gt;
-                                                My fav bike is {bike.brand} {bike.model} 
-                                                it is a {bike.color} from {bike.year}.
-                                                // read state from object
-                                            &lt;/p&gt;
-                                            &lt;button onclick={updateColor}&gt;Black color&lt;/button&gt;
-                                            // state update 
-                                        &lt;/&gt;
-                                    );
-                                }        
-                                
-                            }
-                            
+                                    brand: "ducatti", <br>
+                                    model: "panigale", <br>
+                                    year: "2023", <br>
+                                    color: "red" <br>
+                                }); <br>
+ <br>
+                                // spreading the <b>PreviousState</b> and <b>overwriting</b> only the color  <br>
+                                const updateColor = () => { <br>
+                                    setBike(PreviousState =>{ <br>
+                                        return {...PreviousState, color: "black" } <br>
+                                    }); <br>
+ <br>
+                                    return ( <br>
+                                        &lt;&gt; <br>
+                                            &lt;h1&gt;Bikes&lt;/h1&gt; <br>
+                                            &lt;p&gt; <br>
+                                                My fav bike is {bike.brand} {bike.model}  <br>
+                                                it is a {bike.color} from {bike.year}. <br>
+                                                // read state from object <br>
+                                            &lt;/p&gt; <br>
+                                            &lt;button onclick={updateColor}&gt;Black color&lt;/button&gt; <br>
+                                            // state update  <br>
+                                        &lt;/&gt; <br>
+                                    ); <br>
+                                }   <br>      
+                                 <br>
+                            } <br>
+                             <br>
                             export default Bike;
                     </div>
                 </div>

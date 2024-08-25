@@ -125,25 +125,25 @@
                         16
                     </div>
                     <div class="Example-code-syntex">
-                        import React, { useRef } from "react";
-
-                        function UncontrolledComponent() {
-                            const inputRef = useRef(null);
-                            const handleSubmit = (e) => {
-                                e.preventDefault();
-                                console.log(inputRef.current.value);
-                            };
-                        
-                        
-                            return (
-                                &lt;form onSubmit={handleSubmit}&gt;
-                                    &lt;input
-                                        type="text"
-                                        ref={inputRef}
-                                /&gt;
-                                    &lt;button type="submit"&gt;Submit&lt;/button&gt;
-                                &lt;/form&gt;
-                            );
+                        import React, { useRef } from "react"; <br>
+                        <br>
+                        function UncontrolledComponent() { <br>
+                            const inputRef = useRef(null); <br>
+                            const handleSubmit = (e) => { <br>
+                                e.preventDefault(); <br>
+                                console.log(inputRef.current.value); <br>
+                            }; <br>
+                            <br>
+                            <br>
+                            return ( <br>
+                                &lt;form onSubmit={handleSubmit}&gt; <br>
+                                    &lt;input <br>
+                                        type="text" <br>
+                                        ref={inputRef} <br>
+                                /&gt; <br>
+                                    &lt;button type="submit"&gt;Submit&lt;/button&gt; <br>
+                                &lt;/form&gt; <br>
+                            ); <br>
                         }
                     </div>
                 </div>

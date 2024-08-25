@@ -75,45 +75,43 @@
                         16
                     </div>
                     <div class="Example-code-syntex">
-                        import React, {useState} from "react";
-
-                        function MyForn() {
-                            const [name, setName] useState("");
-                            const [email, setEmail] useState("");
-                        
-                            const handleSubmit (e) => {
-                                e.preventDefault();
-                                console.log("Name:", name); 
-                                console.log("Email:", email);
-                            };
-
-                            return (
-                                &lt;form onSubmit={handleSubmit}&gt;
-                                    &lt;label&gt;
-                                        Name:
-                                        &lt;input
-                                            type="text"
-                                            value={name}
-                                            onChange={(e) =&gt; setName(e.target.value)}
-                                        /&gt;
-                                    &lt;/label&gt;
-                                    &lt;br /&gt;
-                                    &lt;label&gt;
-                                        Email:
-                                        &lt;input
-                                            type="email" valve (email)
-                                            onChange={(e) =&gt; setEmail(e.target.value)}
-                                        /&gt;
-                                    &lt;/label&gt;
-                        
-                                    &lt;br /&gt;
-                        
-                                    &lt;button type="submit"&gt;Submit&lt;/button&gt;
-                                &lt;/form&gt;
-                        
-                            );
-                        }
-                        
+                        import React, {useState} from "react"; <br>
+                        <br>
+                        function MyForn() { <br>
+                            const [name, setName] useState(""); <br>
+                            const [email, setEmail] useState(""); <br>
+                        <br>
+                            const handleSubmit (e) => { <br>
+                                e.preventDefault(); <br>
+                                console.log("Name:", name); <br> 
+                                console.log("Email:", email); <br>
+                            }; <br>
+                            <br>    
+                            return ( <br>
+                                &lt;form onSubmit={handleSubmit}&gt; <br>
+                                    &lt;label&gt; <br>
+                                        Name: <br>
+                                        &lt;input <br>
+                                            type="text" <br>
+                                            value={name} <br>
+                                            onChange={(e) =&gt; setName(e.target.value)} <br>
+                                        /&gt; <br>
+                                    &lt;/label&gt; <br>
+                                    &lt;br /&gt; <br>
+                                    &lt;label&gt; <br>
+                                        Email: <br>
+                                        &lt;input <br>
+                                            type="email" valve (email) <br>
+                                            onChange={(e) =&gt; setEmail(e.target.value)} <br>
+                                        /&gt; <br>
+                                    &lt;/label&gt; <br>
+                                    <br>
+                                    &lt;button type="submit"&gt;Submit&lt;/button&gt; <br>
+                                &lt;/form&gt; <br>
+                            <br>
+                            ); <br>
+                        } <br>
+                        <br>
                         export default MyForn;                    
                     </div>
                 </div>

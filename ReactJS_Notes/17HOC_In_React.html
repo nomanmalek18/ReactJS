@@ -46,10 +46,10 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                        const EnhancedComponent = withExtraFunctionality (OriginalComponent);
-
-                        // Example
-                        
+                        const EnhancedComponent = withExtraFunctionality (OriginalComponent); <br>
+                        <br>    
+                        // Example <br>
+                            <br>
                         const IronMan = withSuit (Tony Stark)
                     </div>
                 </div>
@@ -78,27 +78,27 @@
                     </div>
                     <div class="Example-code-syntex">
 
-                        import React, { useState } from "react";
-
-                            function Item2() {
-                                const [cost, setCost] = useState(10);
-                                let costHandler() =>{
+                        import React, { useState } from "react";  <br>
+                        <br>
+                            function Item2() { <br>
+                                const [cost, setCost] = useState(10); <br>
+                                let costHandler() =>{ <br>
                                     setCost(cost. 10);
-                        
-                                };
-                        
-                            return (
-                                &lt;div className="item2"&gt;
-                                    &lt;h1&gt;
-                                        Item2 Cost: &lt;span&gt;*{cost}&lt;/span&gt;
-                                    &lt;/h1&gt;
-                                    &lt;button onClick={costHandler}&gt;
-                                        Increase Cost
-                                    &lt;/button&gt;
-                                &lt;/div&gt;
-                            );
-                        }
-                        
+                         <br>
+                                }; <br>
+                         <br>
+                            return ( <br>
+                                &lt;div className="item2"&gt; <br>
+                                    &lt;h1&gt; <br>
+                                        Item2 Cost: &lt;span&gt;*{cost}&lt;/span&gt; <br>
+                                    &lt;/h1&gt; <br>
+                                    &lt;button onClick={costHandler}&gt; <br>
+                                        Increase Cost <br>
+                                    &lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                            ); <br>
+                        } <br>
+                         <br>
                         export default Item2;
                     </div>
                 </div>
@@ -118,27 +118,27 @@
                     </div>
                     <div class="Example-code-syntex">
 
-                        import React, { useState } from "react";
-
-                            function Item1() {
-                                const [cost, setCost] = useState(10);
-                                let costHandler() =>{
-                                    setCost(cost. 10);
-                        
-                                };
-                        
-                            return (
-                                &lt;div className="Item1"&gt;
-                                    &lt;h1&gt;
-                                        Item1 Cost: &lt;span&gt;*{cost}&lt;/span&gt;
-                                    &lt;/h1&gt;
-                                    &lt;button onClick={costHandler}&gt;
-                                        Increase Cost
-                                    &lt;/button&gt;
-                                &lt;/div&gt;
-                            );
-                        }
-                        
+                        import React, { useState } from "react";  <br>
+ <br>
+                            function Item1() { <br>
+                                const [cost, setCost] = useState(10); <br>
+                                let costHandler() =>{ <br>
+                                    setCost(cost. 10); <br>
+                         <br>
+                                }; <br>
+                         <br>
+                            return ( <br>
+                                &lt;div className="Item1"&gt; <br>
+                                    &lt;h1&gt; <br>
+                                        Item1 Cost: &lt;span&gt;*{cost}&lt;/span&gt; <br>
+                                    &lt;/h1&gt; <br>
+                                    &lt;button onClick={costHandler}&gt; <br>
+                                        Increase Cost <br>
+                                    &lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                            ); <br>
+                        } <br>
+                         <br>
                         export default Item1;
                     </div>
                 </div>
@@ -158,23 +158,23 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                        import React, { useState } from "react";
-                        
-                            function UpdatedComponent(OriginalComponent)
-                                { function NewComponent() {
-                                    const [cost, setCost] = useState(10);
-                                    let costHandler = () =>{
-                                        setCost(cost + 10); 
-                                    };
-                                return (
-                                    &lt;OriginalComponent
-                                        costHandler={costHandler}
-                                        cost={cost}
-                                    /&gt;
-                                )
-                            }
-                            return NewComponent; 
-                        }
+                        import React, { useState } from "react"; <br>
+                         <br>
+                            function UpdatedComponent(OriginalComponent) <br>
+                                { function NewComponent() { <br>
+                                    const [cost, setCost] = useState(10); <br>
+                                    let costHandler = () =>{ <br>
+                                        setCost(cost + 10);  <br>
+                                    }; <br>
+                                return ( <br>
+                                    &lt;OriginalComponent <br>
+                                        costHandler={costHandler} <br>
+                                        cost={cost} <br>
+                                    /&gt; <br>
+                                ) <br>
+                            } <br>
+                            return NewComponent;  <br>
+                        } <br>
                         export default UpdatedComponent;
                     </div>
                 </div>
@@ -200,19 +200,19 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                        import React, { useState } from "react";
-                        import UpdatedComponent from "./HOC";
-
-                        function Item1 ({cost, costHandler }){
-                            return (    
-                                &lt;div className="item1"&gt;
-                                    &lt;h1&gt;
-                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt; 
-                                    &lt;/h1&gt;
-                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt;
-                                &lt;/div&gt;
-                            );
-                        }
+                        import React, { useState } from "react"; <br>
+                        import UpdatedComponent from "./HOC"; <br>
+ <br>
+                        function Item1 ({cost, costHandler }){ <br>
+                            return (     <br>
+                                &lt;div className="item1"&gt; <br>
+                                    &lt;h1&gt; <br>
+                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt;  <br>
+                                    &lt;/h1&gt; <br>
+                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                            ); <br>
+                        } <br>
                         export default UpdatedComponent (Item1);
                     </div>
                 </div>
@@ -231,19 +231,19 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                        import React, { useState } from "react";
-                        import UpdatedComponent from "./HOC";
-
-                        function Item2 ({cost, costHandler }){
-                            return (    
-                                &lt;div className="Item2"&gt;
-                                    &lt;h1&gt;
-                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt; 
-                                    &lt;/h1&gt;
-                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt;
-                                &lt;/div&gt;
-                            );
-                        }
+                        import React, { useState } from "react"; <br>
+                        import UpdatedComponent from "./HOC"; <br>
+ <br>
+                        function Item2 ({cost, costHandler }){ <br>
+                            return (     <br>
+                                &lt;div className="Item2"&gt; <br>
+                                    &lt;h1&gt; <br>
+                                        item 1 Cost : &lt;span&gt; ₹ {cost}&lt;/span&gt;  <br>
+                                    &lt;/h1&gt; <br>
+                                    &lt;button onclick={costHandler}&gt;increase cost&lt;/button&gt; <br>
+                                &lt;/div&gt; <br>
+                            ); <br>
+                        } <br>
                         export default UpdatedComponent (Item2);
                     </div>
                 </div>
