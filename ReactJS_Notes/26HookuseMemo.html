@@ -101,23 +101,23 @@
                         <br>
                         const squaredCount = useMemo(() => {
                         console.log('calculating squared Count ...'); <br>
-                        return count * count;
-                        }, [count]);
-
-                        // setCounter function
-                        function counterSet(){
-                        setCount((prevCount) => preCount + 1 );
-                        }
-
-                        return(
-                        &lt;div&gt;
-                            &lt;h1&gt;Detail component&lt;/h1&gt;
-                            &lt;p&gt;Count: {count}&lt;/p&gt;
-                            &lt;p&gt;squared Count: {squaredCount}&lt;/p&gt;
-                            &lt;button onclick={counterSet}&gt;Increment Count&lt;/button&gt;
-                        &lt;/div&gt;
-                        );
-                        };
+                        return count * count; <br>
+                        }, [count]); <br>
+ <br>
+                        // setCounter function <br>
+                        function counterSet(){ <br>
+                        setCount((prevCount) => preCount + 1 ); <br>
+                        } <br>
+ <br>
+                        return( <br>
+                        &lt;div&gt; <br>
+                            &lt;h1&gt;Detail component&lt;/h1&gt; <br>
+                            &lt;p&gt;Count: {count}&lt;/p&gt; <br>
+                            &lt;p&gt;squared Count: {squaredCount}&lt;/p&gt; <br>
+                            &lt;button onclick={counterSet}&gt;Increment Count&lt;/button&gt; <br>
+                        &lt;/div&gt; <br>
+                        ); <br>
+                        }; <br>
                         export default myComponent;
                     </div>
                 </div>

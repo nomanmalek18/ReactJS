@@ -38,9 +38,9 @@
                 <h3>// context.js</h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        import React from "react";
-                        const MyContext = React.;;createContext();
-
+                        import React from "react";  <br>
+                        const MyContext = React.;;createContext(); <br>
+ <br>
                         export default MyContext;
                     </div>
                 </div>
@@ -54,19 +54,19 @@
                 <h3>// App.js</h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        import React from "react";
-                        import MyContext from "./context";
-                        import componentA from "./componentA"
-
-                        function App (){
-                            const shareDData = "This data is shared!";
-
-                            return(
-                                <MyContext.provider value ={shareData}>
-                                    <componentA />
-                                </MyContext.provider>
-                            )
-                        }
+                        import React from "react"; <br>
+                        import MyContext from "./context"; <br>
+                        import componentA from "./componentA" <br>
+ <br>
+                        function App (){ <br>
+                            const shareDData = "This data is shared!"; <br>
+ <br>
+                            return( <br>
+                                &lt;MyContext.provider value ={shareData}&gt; <br>
+                                    &lt;componentA /&gt; <br>
+                                &lt;/MyContext.provider&gt; <br>
+                            ) <br>
+                        } <br>
                         export default App;
                     </div>
                 </div>
@@ -80,14 +80,14 @@
                 <h3>// App.js</h3>
                 <div class="Example-code">
                     <div class="Example-code-syntex">
-                        import React {useContext} from "react";
-                        import MyContext from "./context";
-
-                        function componentA (){
-                            const sharedData = useContext(MyContext);
-
-                            return <div>{sharedData}</div>
-                        }
+                        import React {useContext} from "react"; <br>
+                        import MyContext from "./context"; <br>
+ <br>
+                        function componentA (){ <br>
+                            const sharedData = useContext(MyContext); <br>
+ <br>
+                            return &lt;div&gt;{sharedData}&lt;/div&gt; <br>
+                        } <br>
                         export default componentA;
                     </div>
                 </div>

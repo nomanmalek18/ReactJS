@@ -64,21 +64,21 @@
                         6
                     </div>
                     <div class="Example-code-syntex">
-                            import React, { useEffect } from "react";
-                            
-                            function MyComponent(){
-                                useEffect(()=>{
-                                    // Side effects code goes here this function will run after every render of the component 
-                                    
-                                    // Clean-up function (Optional)
-                                    return (){
-                                        //  This function will run before he component unmounts of before the next re-render, depending on the dependencies.
-                                    };
-                                },[dependency1, dependency2]);
-
-                                // component JSX
-                                return <div>...</div>;
-                            }
+                            import React, { useEffect } from "react"; <br>
+                             <br>
+                            function MyComponent(){ <br>
+                                useEffect(()=>{ <br>
+                                    // Side effects code goes here this function will run after every render of the component  <br>
+                                     <br>
+                                    // Clean-up function (Optional) <br>
+                                    return (){ <br>
+                                        //  This function will run before he component unmounts of before the next re-render, depending on the dependencies. <br>
+                                    }; <br>
+                                },[dependency1, dependency2]); <br>
+ <br>
+                                // component JSX <br>
+                                return <div>...</div>; <br>
+                            } <br>
                     </div>
                 </div>
             </div>
